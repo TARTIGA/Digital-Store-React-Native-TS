@@ -6,6 +6,7 @@ import { AuthContext } from '../context'
 import WaterfallImage from '../assets/waterfall.svg'
 import SvgUri from 'react-native-svg-uri';
 import axios from 'axios'
+import API from '../API'
 
 
 
@@ -13,13 +14,20 @@ const AutorizationScreen = ({ navigation }) => {
     const { signIn } = useContext(AuthContext)
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
-    const [users, setUsers] = useState([]);
     const [isSending, setIsSending] = useState(false)
 
     const showAlert = (title = 'RESPONSE', data) => {
         Alert.alert(
             `${title}`,
             `${data}`,
+            [
+                {
+                    text: 'Cancel',
+                    onPress: () => console.log('Cancel Pressed'),
+                    style: 'cancel',
+                },
+                { text: 'OK', onPress: () => console.log('OK Pressed') },
+            ],
             { cancelable: false },
         );
     }
@@ -27,10 +35,10 @@ const AutorizationScreen = ({ navigation }) => {
         const fetchData = async () => {
             if (isSending) {
                 try {
-                    const result = await axios.get("https://jsonplaceholder.typicode.com/users");
-                    setUsers(result.data)
-                    signIn()
-                    showAlert('RESPONSE', JSON.stringify(result.data))
+                    const result = await axios.get(API.url);
+                    const { data: { token } } = result
+                    signIn(token)
+                    showAlert('RESPONSE', JSON.stringify(token))
                 } catch (error) {
                     showAlert('ERROR', error)
                 } finally {
@@ -62,7 +70,7 @@ const AutorizationScreen = ({ navigation }) => {
                 </Button>
                 <AdditionalText >
                     <AdditionalTextLabel >Нажимая войти, вы подтверждаете ознакомление с
-                        <Link text=" пользовательским соглашением" handler={() => showAlert('ERROR', error)} /></AdditionalTextLabel>
+                        <Link text=" пользовательским соглашением" handler={() => showAlert('Пользовательское соглашение', '111222333')} /></AdditionalTextLabel>
                 </AdditionalText>
             </AuthorizationBlock>
         </Container>

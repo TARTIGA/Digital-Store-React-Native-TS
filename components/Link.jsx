@@ -3,10 +3,10 @@ import React from 'react'
 import theme from '../theme'
 import styled from 'styled-components/native';
 
-const Link = ({ text, color, event }) => {
+const Link = ({ text, color, handler }) => {
     return (
         <LinkContainer
-            onPress={event}
+            onPress={handler}
             color={color}
         >
             {text}
@@ -14,7 +14,7 @@ const Link = ({ text, color, event }) => {
     )
 }
 Link.defaultProps = {
-    event: null,
+    handler: null,
     color: theme.palette.primary.main,
     text: 'DEFAULT LINK'
 }

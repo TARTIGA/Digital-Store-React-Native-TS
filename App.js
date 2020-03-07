@@ -35,9 +35,9 @@ const App = () => {
   const [userToken, setUserToken] = useState(null)
   const authContext = useMemo(() => {
     return {
-      signIn: () => {
+      signIn: (token) => {
         setIsLoading(false)
-        setUserToken('value')
+        setUserToken(token)
       },
       signOut: () => {
         setIsLoading(false)
