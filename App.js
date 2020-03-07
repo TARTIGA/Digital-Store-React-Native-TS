@@ -1,10 +1,8 @@
-import React, { useState, useEffect, useMemo } from 'react'
-import { Text } from 'react-native';
-import { AutorizationScreen, HomeScreen, SplashScreen } from './screens'
+import React, { useState, useMemo } from 'react'
+import { AutorizationScreen, HomeScreen } from './screens'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { AuthContext } from './context'
-import styled from 'styled-components/native'
 
 
 const AuthStack = createStackNavigator();
@@ -41,10 +39,6 @@ const App = () => {
         setIsLoading(false)
         setUserToken('value')
       },
-      signUp: () => {
-        setIsLoading(false)
-        setUserToken('value')
-      },
       signOut: () => {
         setIsLoading(false)
         setUserToken(null)
@@ -52,15 +46,6 @@ const App = () => {
     }
   }, [])
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 1000);
-  }, [])
-
-  if (isLoading) {
-    return <SplashScreen />
-  }
   return (
     <AuthContext.Provider value={authContext}>
       <NavigationContainer>

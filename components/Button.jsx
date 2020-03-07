@@ -3,10 +3,10 @@ import styled from 'styled-components/native';
 //Use Context here
 import theme from '../theme'
 
-const Button = ({ children, bgColor, width, event }) => {
+const Button = ({ children, bgColor, width, handler, disabled }) => {
     return (
-        <ButtonContainer bgColor={bgColor} width={width} >
-            <ButtonInside onPress={event} >
+        <ButtonContainer bgColor={bgColor} width={width} disabled={disabled}>
+            <ButtonInside onPress={handler} disabled={disabled}>
                 <ButtonText>{children}</ButtonText>
             </ButtonInside>
         </ButtonContainer>
@@ -16,6 +16,7 @@ Button.defaultProps = {
     event: null,
     bgColor: theme.palette.primary.main,
     width: '100%',
+    disabled: false
 }
 
 const ButtonContainer = styled.View`
@@ -24,6 +25,7 @@ const ButtonContainer = styled.View`
     border-radius:30px;
     width:${props => props.width};
     margin-top:20px;
+    opacity:${props => props.disabled ? 0.5 : 1};
 `;
 
 const ButtonInside = styled.TouchableOpacity`

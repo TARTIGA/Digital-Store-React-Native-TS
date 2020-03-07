@@ -19,8 +19,8 @@ Link.defaultProps = {
     text: 'DEFAULT LINK'
 }
 const LinkContainer = styled.Text`
-color: ${props => props.color};
-     font-weight:600;
+    color: ${props => props.color};
+    font-weight:600;
 `;
 
 
