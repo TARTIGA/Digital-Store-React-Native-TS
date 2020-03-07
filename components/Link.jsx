@@ -7,8 +7,9 @@ const Link = ({ text, color, event }) => {
     return (
         <LinkContainer
             onPress={event}
+            color={color}
         >
-            <TextContent color={color}>{text}</TextContent>
+            {text}
         </LinkContainer>
     )
 }
@@ -17,13 +18,10 @@ Link.defaultProps = {
     color: theme.palette.primary.main,
     text: 'DEFAULT LINK'
 }
-const LinkContainer = styled.TouchableOpacity`
- height:48px;
-`;
-
-const TextContent = styled.Text`
-     color: ${props => props.color};
+const LinkContainer = styled.Text`
+color: ${props => props.color};
      font-weight:600;
 `;
+
 
 export default Link;

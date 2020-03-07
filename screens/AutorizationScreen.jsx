@@ -28,9 +28,9 @@ const AutorizationScreen = ({ navigation }) => {
                 <Button event={() => signIn()} >
                     <Text>Войти</Text>
                 </Button>
-                <AdditionalText>
-                    <Text>Нажимая войти, вы подтверждаете ознакомление с</Text>
-                    <Link text="пользовательским соглашением" event={() => alert('alert')} />
+                <AdditionalText >
+                    <AdditionalTextLabel >Нажимая войти, вы подтверждаете ознакомление с
+                        <Link text="пользовательским соглашением" event={() => alert('alert')} /></AdditionalTextLabel>
                 </AdditionalText>
             </AuthorizationBlock>
         </Container>
@@ -63,8 +63,13 @@ const ImageLabel = styled.Text`
         `;
 
 const AdditionalText = styled.View`
-align-items:center;
+flex:1;
 margin-top:20px;
+`;
+
+const AdditionalTextLabel = styled.Text`
+text-align:center;
+font-size: 12;
 `;
 
 
