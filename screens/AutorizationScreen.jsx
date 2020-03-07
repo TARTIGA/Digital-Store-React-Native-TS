@@ -25,7 +25,7 @@ const AutorizationScreen = ({ navigation }) => {
             <AuthorizationBlock>
                 <CustomTextInput value={login} placeholder={'Логин'} onChangeText={login => setLogin(login)} />
                 <CustomTextInput value={password} placeholder={'Пароль'} onChangeText={password => setPassword(password)} />
-                <Button onPress={() => signIn()} >
+                <Button event={() => signIn()} >
                     <Text>Войти</Text>
                 </Button>
                 <AdditionalText>

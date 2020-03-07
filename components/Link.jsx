@@ -1,5 +1,6 @@
 import React from 'react'
-import { TouchableOpacity } from 'react-native';
+//Use Context here
+import theme from '../theme'
 import styled from 'styled-components/native';
 
 const Link = ({ text, color, event }) => {
@@ -13,7 +14,7 @@ const Link = ({ text, color, event }) => {
 }
 Link.defaultProps = {
     event: null,
-    color: '#db7093',
+    color: theme.palette.primary.main,
     text: 'DEFAULT LINK'
 }
 const LinkContainer = styled.TouchableOpacity`

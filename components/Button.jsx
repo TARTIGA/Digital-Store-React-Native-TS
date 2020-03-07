@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/native';
+//Use Context here
+import theme from '../theme'
 
 const Button = ({ children, bgColor, width, event }) => {
     return (
@@ -12,7 +14,7 @@ const Button = ({ children, bgColor, width, event }) => {
 }
 Button.defaultProps = {
     event: null,
-    bgColor: '#db7093',
+    bgColor: theme.palette.primary.main,
     width: '100%',
 }
 

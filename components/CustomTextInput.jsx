@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
+//Use Context here
+import theme from '../theme'
 
 const CustomTextInput = (props) => {
     return (
@@ -13,7 +15,7 @@ const CustomTextInput = (props) => {
 CustomTextInput.defaultProps = {
     event: null,
     value: 'value',
-    bordColor: '#db7093'
+    bordColor: theme.palette.primary.main,
 }
 
 const TextInputContainer = styled.View`
