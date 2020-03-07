@@ -1,22 +1,19 @@
 import React from 'react'
-import { TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native';
 
-const Button = ({ children, bgColor, width, navigation, screenName, params }) => {
+const Button = ({ children, bgColor, width, event }) => {
     return (
         <ButtonContainer bgColor={bgColor} width={width} >
-            <ButtonInside onPress={() => navigation.push(screenName, params)} disabled={!screenName}>
+            <ButtonInside onPress={event} >
                 <ButtonText>{children}</ButtonText>
             </ButtonInside>
         </ButtonContainer>
     )
 }
 Button.defaultProps = {
-    bgColor: '#2A86FF',
+    event: null,
+    bgColor: '#db7093',
     width: '100%',
-    navigation: null,
-    screenName: null,
-    params: null
 }
 
 const ButtonContainer = styled.View`
@@ -24,6 +21,7 @@ const ButtonContainer = styled.View`
     height:45px;
     border-radius:30px;
     width:${props => props.width};
+    margin-top:20px;
 `;
 
 const ButtonInside = styled.TouchableOpacity`
