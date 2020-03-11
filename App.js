@@ -9,7 +9,6 @@ const AuthStack = createStackNavigator();
 const AppStack = createStackNavigator();
 const RootStack = createStackNavigator();
 
-//don`t use expressions
 const AppStackScreen = () =>
   <AppStack.Navigator >
     <AppStack.Screen name="Home" component={HomeScreen} />

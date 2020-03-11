@@ -1,5 +1,5 @@
-# React Native Authorization
+# React Native Digital Store App
 
-### Simple Authorization React Native Project
+### Digital Store
 
-![](/assets/auth_page_layout.png?raw=true 'React Native Authorization Layout')
+![](/assets/MainPage.png?raw=true 'React Native Authorization Layout')

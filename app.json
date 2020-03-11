@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Autorization Template",
-    "slug": "ReactNativeAutorization",
+    "name": "ReactNativeDigitalStoreApp",
+    "slug": "DigitalStoreApp",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": [
