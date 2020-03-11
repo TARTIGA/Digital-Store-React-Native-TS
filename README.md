@@ -14,5 +14,6 @@
     * Search Screen
     * Basket Screen
     * Profile Screen
+* Modals
 
 ![](/assets/MainPage.png?raw=true 'React Native Authorization Layout')
