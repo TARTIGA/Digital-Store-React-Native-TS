@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react'
-import { AutorizationScreen, HomeScreen } from './screens'
+import { HomeScreen } from './screens'
+import { FirstScreen, LargeScreen, ExclusivityScreen, PriceScreen } from './screens'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { AuthContext } from './context'
@@ -15,10 +16,15 @@ const AppStackScreen = () =>
   </AppStack.Navigator>
 
 const AuthStackScreen = () =>
-  <AuthStack.Navigator >
-    <AuthStack.Screen name="Authorization" component={AutorizationScreen} options={{
-      headerShown: false
-    }} />
+  <AuthStack.Navigator screenOptions={{
+    headerShown: false
+  }}
+    initialRouteName={"FirstScreen"}
+  >
+    <AuthStack.Screen name="FirstScreen" component={FirstScreen} />
+    <AuthStack.Screen name="LargeScreen" component={LargeScreen} />
+    <AuthStack.Screen name="ExclusivityScreen" component={ExclusivityScreen} />
+    <AuthStack.Screen name="PriceScreen" component={PriceScreen} />
   </AuthStack.Navigator>
 
 const RootStackScreen = ({ userToken }) =>

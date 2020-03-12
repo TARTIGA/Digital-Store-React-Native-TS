@@ -1,3 +1,4 @@
+import { Alert } from 'react-native'
 export default (title = 'RESPONSE', data) => {
     Alert.alert(
         `${title}`,

@@ -16,11 +16,11 @@
     * Profile Screen
 * Modals
 
-![](/assets/screens/StartPage.png?raw=true 'React Native Authorization Layout')
-![](/assets/screens/SignIn.png?raw=true 'React Native Authorization Layout')
-![](/assets/screens/MainScreen.png?raw=true 'React Native Authorization Layout')
-![](/assets/screens/Card.png?raw=true 'React Native Authorization Layout')
-![](/assets/screens/HomeScreen.png?raw=true 'React Native Authorization Layout')
-![](/assets/screens/Order.png?raw=true 'React Native Authorization Layout')
-![](/assets/screens/Search.png?raw=true 'React Native Authorization Layout')
-![](/assets/screens/UserProfile.png?raw=true 'React Native Authorization Layout')
+![](/assets/screens/StartPage.png?raw=true 'StartPage')
+![](/assets/screens/SignIn.png?raw=true 'SignIn')
+![](/assets/screens/MainScreen.png?raw=true 'MainScreen')
+![](/assets/screens/Card.png?raw=true 'Card')
+![](/assets/screens/HomeScreen.png?raw=true 'HomeScreen')
+![](/assets/screens/Order.png?raw=true 'Order')
+![](/assets/screens/Search.png?raw=true 'Search')
+![](/assets/screens/UserProfile.png?raw=true 'UserProfile')

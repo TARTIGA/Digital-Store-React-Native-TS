@@ -1,36 +1,22 @@
 import React, { useContext, useState, useEffect } from 'react'
 import styled from 'styled-components/native'
-import { Text, Alert, KeyboardAvoidingView } from 'react-native'
+import { Text } from 'react-native'
 import { Link, CustomTextInput, Button } from '../components'
 import { AuthContext } from '../context'
 import WaterfallImage from '../assets/waterfall.svg'
 import SvgUri from 'react-native-svg-uri';
 import axios from 'axios'
 import API from '../API'
+import showAlert from '../helpers/showAlert'
 
 
 
-const AutorizationScreen = ({ navigation }) => {
+const AuthorizationScreen = ({ navigation }) => {
     const { signIn } = useContext(AuthContext)
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const [isSending, setIsSending] = useState(false)
 
-    const showAlert = (title = 'RESPONSE', data) => {
-        Alert.alert(
-            `${title}`,
-            `${data}`,
-            [
-                {
-                    text: 'Cancel',
-                    onPress: () => console.log('Cancel Pressed'),
-                    style: 'cancel',
-                },
-                { text: 'OK', onPress: () => console.log('OK Pressed') },
-            ],
-            { cancelable: false },
-        );
-    }
     useEffect(() => {
         const fetchData = async () => {
             if (isSending) {
@@ -82,6 +68,8 @@ const Container = styled.KeyboardAvoidingView`
         padding:20px;
         justify-content:center;
         align-items:center;
+        background-color:#0001FC;
+        color:#fff;
         `;
 
 const ImageBlock = styled.View`
@@ -113,4 +101,4 @@ font-size: 12;
 `;
 
 
-export default AutorizationScreen
+export default AuthorizationScreen
