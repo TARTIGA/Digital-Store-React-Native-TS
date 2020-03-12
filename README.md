@@ -16,10 +16,10 @@
     * Profile Screen
 * Modals
 
-![](/assets/StartPage.png =250x250 'React Native Authorization Layout')
-![](/assets/SignIn.png =250x250)
-![](/assets/MainScreen.png =250x250)
-![](/assets/HomeScreen.png =250x250)
-![](/assets/Order.png =250x250)
-![](/assets/Search.png =250x250)
-![](/assets/UserProfile.png =250x250)
+![](/assets/screens/StartPage.png =250x250)
+![](/assets/screens/SignIn.png =250x250)
+![](/assets/screens/MainScreen.png =250x250)
+![](/assets/screens/HomeScreen.png =250x250)
+![](/assets/screens/Order.png =250x250)
+![](/assets/screens/Search.png =250x250)
+![](/assets/screens/UserProfile.png =250x250)
