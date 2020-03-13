@@ -1,13 +1,12 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components/native'
 import { Image } from 'react-native'
-import { Link, Dots } from '../components'
-import { AuthContext } from '../context'
-const PromoImg = require('../assets/img/World.png')
+import { Link, Dots } from '../../components'
+import { AuthContext } from '../../context'
+const PromoImg = require('../../assets/img/Price.png')
 
 
-
-const LargeScreen = ({ navigation }) => {
+const PriceScreen = ({ navigation }) => {
     const { signIn } = useContext(AuthContext)
     return (
         <Container >
@@ -18,11 +17,11 @@ const LargeScreen = ({ navigation }) => {
                 />
             </ImageView>
             <PromoTextBlock>
-                <PromoLabel>Large</PromoLabel>
+                <PromoLabel>Price</PromoLabel>
             </PromoTextBlock>
-            <Dots checkedIndex={0} />
+            <Dots checkedIndex={2} />
             <LinkView>
-                <Link text="next" fontSize={'18px'} handler={() => navigation.push('ExclusivityScreen')} />
+                <Link text="next" fontSize={'18px'} handler={() => navigation.push('FirstScreen')} />
             </LinkView>
         </Container>
     );
@@ -35,7 +34,6 @@ const Container = styled.View`
         justify-content:center;
         align-items:center;
         `;
-
 
 const PromoTextBlock = styled.View`
 text-align:center;
@@ -61,4 +59,4 @@ const ImageView = styled.View`
 `;
 
 
-export default LargeScreen
+export default PriceScreen

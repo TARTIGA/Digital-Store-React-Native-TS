@@ -1,5 +1,5 @@
 import React from 'react'
-//Use Context here
+// Fake component
 import styled from 'styled-components/native';
 
 const Dots = ({ checkedIndex }) => {

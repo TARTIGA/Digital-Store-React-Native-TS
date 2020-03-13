@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components/native'
 import { Text, Image, View } from 'react-native'
-import { Link, Button } from '../components'
-import { AuthContext } from '../context'
+import { Link, Button } from 'app/components'
+import { AuthContext } from 'app/context'
 // import LogoSvg from '../assets/img/Logo.svg'
 // import SvgUri from 'react-native-svg-uri';
-const LogoImg = require('../assets/img/Logo.png')
+const LogoImg = require('app/assets/img/Logo.png')
 
 
 

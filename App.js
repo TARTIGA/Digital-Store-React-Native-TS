@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react'
 import { HomeScreen } from './screens'
-import { FirstScreen, LargeScreen, ExclusivityScreen, PriceScreen } from './screens'
+import { FirstScreen, LargeScreen, ExclusivityScreen, PriceScreen } from './screens/authorization'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { AuthContext } from './context'
