@@ -8,7 +8,6 @@ const Dots = ({ checkedIndex }) => {
             <Dot index={0} checkedIndex={checkedIndex} />
             <Dot index={1} checkedIndex={checkedIndex} />
             <Dot index={2} checkedIndex={checkedIndex} />
-            <Dot index={3} checkedIndex={checkedIndex} />
         </DotsContainer>
     )
 }
@@ -18,7 +17,7 @@ Dots.defaultProps = {
 const DotsContainer = styled.View`
     justify-content:space-between;
     align-items:center;
-    margin-top:72px;
+    margin-top:40px;
     height:25px;
     width:50px;
     flex-direction: row;

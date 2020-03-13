@@ -1,6 +1,12 @@
 import React, { useState, useMemo } from 'react'
 import { HomeScreen } from './screens'
-import { FirstScreen, LargeScreen, ExclusivityScreen, PriceScreen } from './screens/authorization'
+import {
+  FirstScreen,
+  LargeScreen,
+  ExclusivityScreen,
+  PriceScreen,
+  AutorizationScreen
+} from './screens/authorization'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { AuthContext } from './context'
@@ -17,14 +23,28 @@ const AppStackScreen = () =>
 
 const AuthStackScreen = () =>
   <AuthStack.Navigator screenOptions={{
-    headerShown: false
+    headerShown: false,
+    headerStyle: { backgroundColor: '#0001FC', height: 120, shadowColor: 'transparent' },
+    headerTitleStyle: { color: '#fff', fontSize: 24 },
+    headerTintColor: '#fff',
+    cardStyle: {
+      backgroundColor: '#0001FC',
+      padding: 32,
+      flex: 1
+    }
   }}
-    initialRouteName={"FirstScreen"}
+    initialRouteName={"AutorizationScreen"}
   >
     <AuthStack.Screen name="FirstScreen" component={FirstScreen} />
     <AuthStack.Screen name="LargeScreen" component={LargeScreen} />
     <AuthStack.Screen name="ExclusivityScreen" component={ExclusivityScreen} />
     <AuthStack.Screen name="PriceScreen" component={PriceScreen} />
+    <AuthStack.Screen name="AutorizationScreen" component={AutorizationScreen} options={{
+      headerShown: true
+    }} />
+    <AuthStack.Screen name="AutorizationScreen2" component={AutorizationScreen} options={{
+      headerShown: true
+    }} />
   </AuthStack.Navigator>
 
 const RootStackScreen = ({ userToken }) =>

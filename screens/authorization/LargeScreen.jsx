@@ -13,7 +13,7 @@ const LargeScreen = ({ navigation }) => {
         <Container >
             <ImageView>
                 <Image
-                    style={{ width: 216, height: 216 }}
+                    style={{ width: 256, height: 203 }}
                     source={PromoImg}
                 />
             </ImageView>
@@ -29,18 +29,14 @@ const LargeScreen = ({ navigation }) => {
 }
 
 const Container = styled.View`
-        flex: 1;
-        padding:32px;
-        background-color:#0001FC;
-        justify-content:center;
-        align-items:center;
+        justify-content:flex-end;
         `;
 
 
 const PromoTextBlock = styled.View`
 text-align:center;
 align-items:center;
-margin-top:72px;
+margin-top:88px;
 `;
 
 const PromoLabel = styled.Text`
@@ -51,7 +47,7 @@ color:#fff;
 const LinkView = styled.View`
 text-align:center;
 align-items:center;
-margin-top:72px;
+margin-top:40px;
 `;
 
 const ImageView = styled.View`

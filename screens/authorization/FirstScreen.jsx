@@ -38,11 +38,7 @@ const FirstScreen = ({ navigation }) => {
 }
 
 const Container = styled.View`
-        flex: 1;
-        padding:32px;
-        background-color:#0001FC;
-        justify-content:center;
-        align-items:center;
+        justify-content:flex-end;
         `;
 
 const MainLabel = styled.Text`
@@ -60,7 +56,7 @@ width:100%;
 const LinkView = styled.View`
 text-align:center;
 align-items:center;
-margin-top:72px;
+margin-top:48px;
 `;
 
 const ImageView = styled.View`

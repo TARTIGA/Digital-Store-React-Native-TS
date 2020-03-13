@@ -7,7 +7,7 @@ const Button = ({ children, bgColor, width, handler, disabled, textColor }) => {
     return (
         <ButtonContainer bgColor={bgColor} width={width} disabled={disabled}>
             <ButtonInside onPress={handler} disabled={disabled}>
-                <ButtonText>{children}</ButtonText>
+                <ButtonText textColor={textColor}>{children}</ButtonText>
             </ButtonInside>
         </ButtonContainer>
     )
@@ -16,7 +16,8 @@ Button.defaultProps = {
     event: null,
     bgColor: theme.palette.secondary.main,
     width: '100%',
-    disabled: false
+    disabled: false,
+    textColor: theme.palette.primary.main
 }
 
 const ButtonContainer = styled.View`
@@ -35,7 +36,7 @@ const ButtonInside = styled.TouchableOpacity`
 `;
 
 const ButtonText = styled.Text`
-    color:#0001FC;
+    color:${props => props.textColor};;
     font-weight:500;
     font-size:18px;
 `;
