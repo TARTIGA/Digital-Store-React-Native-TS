@@ -1,13 +1,24 @@
 import React from 'react'
 import styled from 'styled-components/native';
 //Use Context here
-import theme from '../theme'
+import theme from 'app/theme'
+import { Text } from 'react-native'
 
-const Button = ({ children, bgColor, width, handler, disabled, textColor }) => {
+// TODO: REFACTOR THIS ?//
+
+const Button = ({ children, bgColor, width, handler, disabled, textColor, label, icon }) => {
     return (
         <ButtonContainer bgColor={bgColor} width={width} disabled={disabled}>
             <ButtonInside onPress={handler} disabled={disabled}>
-                <ButtonText textColor={textColor}>{children}</ButtonText>
+                {icon ?
+                    (
+                        <BtnContainerWithIcon>
+                            {icon}
+                            <ButtonText textColor={textColor}>{label}</ButtonText>
+                            <Text />
+                        </BtnContainerWithIcon>)
+                    :
+                    <ButtonText textColor={textColor}>{children}</ButtonText>}
             </ButtonInside>
         </ButtonContainer>
     )
@@ -17,7 +28,9 @@ Button.defaultProps = {
     bgColor: theme.palette.secondary.main,
     width: '100%',
     disabled: false,
-    textColor: theme.palette.primary.main
+    textColor: theme.palette.primary.main,
+    icon: null,
+    label: null
 }
 
 const ButtonContainer = styled.View`
@@ -33,6 +46,13 @@ const ButtonInside = styled.TouchableOpacity`
     flex:1;
     justify-content:center;
     align-items:center;
+    flex-direction:row;
+`;
+
+const BtnContainerWithIcon = styled.View`
+    width:100%;
+    justify-content:space-around;
+    flex-direction:row;
 `;
 
 const ButtonText = styled.Text`
