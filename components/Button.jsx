@@ -18,7 +18,7 @@ const Button = ({ children, bgColor, width, handler, disabled, textColor, label,
                             <Text />
                         </BtnContainerWithIcon>)
                     :
-                    <ButtonText textColor={textColor}>{children}</ButtonText>}
+                    <ButtonText textColor={textColor}>{label}</ButtonText>}
             </ButtonInside>
         </ButtonContainer>
     )

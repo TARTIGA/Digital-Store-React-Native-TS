@@ -5,7 +5,9 @@ import {
   LargeScreen,
   ExclusivityScreen,
   PriceScreen,
-  AutorizationScreen
+  AutorizationScreen,
+  CreateAccountScreen,
+  SignInScreen
 } from './screens/authorization'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -18,11 +20,12 @@ const RootStack = createStackNavigator();
 
 const AppStackScreen = () =>
   <AppStack.Navigator >
-    <AppStack.Screen name="Home" component={HomeScreen} />
+    <AppStack.Screen name="HomeScreen" component={HomeScreen} />
   </AppStack.Navigator>
 
 const AuthStackScreen = () =>
   <AuthStack.Navigator screenOptions={{
+    headerLeft: null,
     headerShown: false,
     headerStyle: { backgroundColor: '#0001FC', height: 120, shadowColor: 'transparent' },
     headerTitleStyle: { color: '#fff', fontSize: 24 },
@@ -30,10 +33,9 @@ const AuthStackScreen = () =>
     cardStyle: {
       backgroundColor: '#0001FC',
       padding: 32,
-      flex: 1
     }
   }}
-    initialRouteName={"AutorizationScreen"}
+    initialRouteName={"FirstScreen"}
   >
     <AuthStack.Screen name="FirstScreen" component={FirstScreen} />
     <AuthStack.Screen name="LargeScreen" component={LargeScreen} />
@@ -41,10 +43,17 @@ const AuthStackScreen = () =>
     <AuthStack.Screen name="PriceScreen" component={PriceScreen} />
     <AuthStack.Screen name="AutorizationScreen" component={AutorizationScreen} options={{
       headerShown: true
-    }} />
-    <AuthStack.Screen name="AutorizationScreen2" component={AutorizationScreen} options={{
+    }}
+    />
+    <AuthStack.Screen name="CreateAccountScreen" component={CreateAccountScreen} options={{
       headerShown: true
-    }} />
+    }}
+    />
+    <AuthStack.Screen name="SignInScreen" component={SignInScreen} options={{
+      headerShown: true,
+      title: 'Sign In'
+    }}
+    />
   </AuthStack.Navigator>
 
 const RootStackScreen = ({ userToken }) =>

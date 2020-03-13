@@ -9,9 +9,7 @@ const HomeScreen = ({ navigation }) => {
     return (
         <Container>
             <Text>HomeScreen</Text>
-            <Button handler={() => signOut()} >
-                <Text>Sign Out</Text>
-            </Button>
+            <Button handler={() => signOut()} label={<Text>Sign Out</Text>} />
         </Container>
     );
 }

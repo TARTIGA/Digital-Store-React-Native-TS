@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components/native'
 import { Text, Image, View } from 'react-native'
-import { Link, Button } from 'app/components'
+import { Link, Button, SkipLink } from 'app/components'
 import { AuthContext } from 'app/context'
 // import LogoSvg from '../assets/img/Logo.svg'
 // import SvgUri from 'react-native-svg-uri';
@@ -26,19 +26,19 @@ const FirstScreen = ({ navigation }) => {
                 />
             </ImageView>
             <ButtonView>
-                <Button handler={() => navigation.push('LargeScreen')} >
-                    <Text>Let's go!</Text>
-                </Button>
+                <Button handler={() => navigation.push('LargeScreen')} label={<Text>Let's go!</Text>} />
             </ButtonView>
-            <LinkView>
-                <Link text="Skip Registration" fontSize={'18px'} handler={() => navigation.push('LargeScreen')} />
-            </LinkView>
+            <SkipLinkView>
+                <Link text="Skip Registration" fontSize={'18px'} handler={() => signIn('token')} ></Link>
+            </SkipLinkView>
         </Container>
     );
 }
 
 const Container = styled.View`
-        justify-content:flex-end;
+        justify-content:center;
+        align-items:center;
+        flex:1;
         `;
 
 const MainLabel = styled.Text`
@@ -53,11 +53,12 @@ margin-top:68;
 width:100%;
 `;
 
-const LinkView = styled.View`
+const SkipLinkView = styled.View`
 text-align:center;
 align-items:center;
 margin-top:48px;
 `;
+
 
 const ImageView = styled.View`
      align-items:center;

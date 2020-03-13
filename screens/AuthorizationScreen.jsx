@@ -51,9 +51,9 @@ const AuthorizationScreen = ({ navigation }) => {
             <AuthorizationBlock>
                 <CustomTextInput value={login} placeholder={'Логин'} onChangeText={login => setLogin(login)} />
                 <CustomTextInput value={password} placeholder={'Пароль'} onChangeText={password => setPassword(password)} />
-                <Button handler={() => setIsSending(!isSending)} disabled={isSending}>
-                    <Text>Войти</Text>
-                </Button>
+                <Button handler={() => setIsSending(!isSending)}
+                    disabled={isSending}
+                    label={<Text>Войти</Text>} />
                 <AdditionalText >
                     <AdditionalTextLabel >Нажимая войти, вы подтверждаете ознакомление с
                         <Link text=" пользовательским соглашением" handler={() => showAlert('Пользовательское соглашение', '111222333')} /></AdditionalTextLabel>

@@ -20,15 +20,17 @@ const PriceScreen = ({ navigation }) => {
                 <PromoLabel>Price</PromoLabel>
             </PromoTextBlock>
             <Dots checkedIndex={2} />
-            <LinkView>
-                <Link text="next" fontSize={'18px'} handler={() => navigation.push('FirstScreen')} />
-            </LinkView>
+            <SkipLinkView>
+                <Link text="next" fontSize={'18px'} handler={() => navigation.push('AutorizationScreen')} />
+            </SkipLinkView>
         </Container>
     );
 }
 
 const Container = styled.View`
-        justify-content:flex-end;
+        flex:1;
+        align-items:center;
+        justify-content:center;
         `;
 
 const PromoTextBlock = styled.View`
@@ -42,7 +44,7 @@ font-size: 24px;
 color:#fff;
 `;
 
-const LinkView = styled.View`
+const SkipLinkView = styled.View`
 text-align:center;
 align-items:center;
 margin-top:40px;

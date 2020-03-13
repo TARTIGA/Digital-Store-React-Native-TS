@@ -15,7 +15,7 @@ Dots.defaultProps = {
     checked: 0,
 }
 const DotsContainer = styled.View`
-    justify-content:space-between;
+    justify-content:space-around;
     align-items:center;
     margin-top:40px;
     height:25px;

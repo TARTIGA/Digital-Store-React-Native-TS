@@ -20,15 +20,17 @@ const ExclusivityScreen = ({ navigation }) => {
                 <PromoLabel>Exclusivity</PromoLabel>
             </PromoTextBlock>
             <Dots checkedIndex={1} />
-            <LinkView>
+            <SkipLinkView>
                 <Link text="next" fontSize={'18px'} handler={() => navigation.push('PriceScreen')} />
-            </LinkView>
+            </SkipLinkView>
         </Container>
     );
 }
 
 const Container = styled.View`
-        justify-content:flex-end;
+        justify-content:center;
+        align-items:center;
+        flex:1;
         `;
 
 const PromoTextBlock = styled.View`
@@ -42,10 +44,10 @@ font-size: 24px;
 color:#fff;
 `;
 
-const LinkView = styled.View`
+const SkipLinkView = styled.View`
 text-align:center;
 align-items:center;
-margin-top:40px;
+margin-top:48px;
 `;
 
 const ImageView = styled.View`
@@ -53,6 +55,5 @@ const ImageView = styled.View`
      justify-content:center;
      margin-top:68;
 `;
-
 
 export default ExclusivityScreen

@@ -21,15 +21,17 @@ const LargeScreen = ({ navigation }) => {
                 <PromoLabel>Large</PromoLabel>
             </PromoTextBlock>
             <Dots checkedIndex={0} />
-            <LinkView>
+            <SkipLinkView>
                 <Link text="next" fontSize={'18px'} handler={() => navigation.push('ExclusivityScreen')} />
-            </LinkView>
+            </SkipLinkView>
         </Container>
     );
 }
 
 const Container = styled.View`
-        justify-content:flex-end;
+        align-items:center;
+        justify-content:center;
+        flex:1;
         `;
 
 
@@ -44,10 +46,10 @@ font-size: 24px;
 color:#fff;
 `;
 
-const LinkView = styled.View`
+const SkipLinkView = styled.View`
 text-align:center;
 align-items:center;
-margin-top:40px;
+margin-top:48px;
 `;
 
 const ImageView = styled.View`
