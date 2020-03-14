@@ -1,14 +1,14 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components/native'
 import { Text } from 'react-native'
-import { Button } from '../components'
-import { AuthContext } from '../context'
+import { Button } from 'app/components'
+import { AuthContext } from 'app/context'
 
-const HomeScreen = ({ navigation }) => {
+const UserScreen = ({ navigation }) => {
     const { signOut } = useContext(AuthContext)
     return (
         <Container>
-            <Text>HomeScreen</Text>
+            <Text>UserScreen</Text>
             <Button handler={() => signOut()} label={<Text>Sign Out</Text>} />
         </Container>
     );
@@ -19,4 +19,4 @@ flex: 1;
 padding:20px;
 `;
 
-export default HomeScreen
+export default UserScreen

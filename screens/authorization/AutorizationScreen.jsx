@@ -14,16 +14,16 @@ const AutorizationScreen = ({ navigation }) => {
                 <Button handler={() => navigation.push('CreateAccountScreen')}
                     label={<Text>Create account</Text>} />
                 <SocialBtnView>
-                    <Button handler={() => { }}
+                    <Button
                         label={<Text>Sign In</Text>}
-                        icon={<FontAwesome name="google" size={24} color="red" />} />
+                        icon={<FontAwesome name="google" size={24} color="red" />}
+                        handler={() => signIn('token')} />
                     <Button
                         bgColor={'#415A93'}
                         textColor={'#fff'}
                         label={<Text>Sign In</Text>}
                         icon={<FontAwesome name="facebook" size={24} color="#fff" />}
-                        handler={() => { }}
-                    />
+                        handler={() => signIn('token')} />
                 </SocialBtnView>
             </ButtonView>
             <LinkView>

@@ -12,7 +12,7 @@ const PriceScreen = ({ navigation }) => {
         <Container >
             <ImageView>
                 <Image
-                    style={{ width: 216, height: 216 }}
+                    style={{ width: 256, height: 256 }}
                     source={PromoImg}
                 />
             </ImageView>

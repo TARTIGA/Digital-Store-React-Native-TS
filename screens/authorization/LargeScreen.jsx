@@ -13,7 +13,7 @@ const LargeScreen = ({ navigation }) => {
         <Container >
             <ImageView>
                 <Image
-                    style={{ width: 256, height: 203 }}
+                    style={{ width: 256, height: 256 }}
                     source={PromoImg}
                 />
             </ImageView>
