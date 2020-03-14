@@ -39,6 +39,12 @@ const HomeStackScreen = () =>
       shadowRadius: 0,
       elevation: 0,
     },
+    cardStyle: {
+      backgroundColor: '#FDFEFF',
+      padding: 0,
+      paddingLeft: 16,
+      paddingRight: 16,
+    }
   }}>
     <HomeStack.Screen name="Home" component={HomeScreen} options={{
       headerTitleStyle: {
@@ -55,8 +61,17 @@ const AppStackScreen = () =>
     initialRouteName="Home"
     tabBarOptions={{
       activeTintColor: '#0001FC',
-      inactiveTintColor: '#a7a7a7',
-      showLabel: false
+      inactiveTintColor: '#000',
+      showLabel: false,
+      style: {
+        backgroundColor: '#EFF5FB',
+        height: 70,
+        shadowColor: 'transparent',
+        shadowOpacity: 0,
+        shadowOffset: { height: 0, },
+        shadowRadius: 0,
+        elevation: 0,
+      }
     }}>
     <AppTabStack.Screen name="Home" component={HomeStackScreen}
       options={{
