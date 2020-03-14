@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react'
-import { HomeScreen, CategoriesScreen, LaptopsScreen } from 'app/screens/home'
+import { HomeScreen, CategoriesScreen, CategoryScreen } from 'app/screens/home'
 import { SearchScreen } from 'app/screens/search'
 import { BasketScreen } from 'app/screens/basket'
 import { UserScreen } from 'app/screens/user'
@@ -31,14 +31,6 @@ const HomeStackScreen = () =>
     headerTitleStyle: {
       color: '#000', fontSize: 22,
     },
-    headerStyle: {
-      height: 80,
-      shadowColor: 'transparent',
-      shadowOpacity: 0,
-      shadowOffset: { height: 0, },
-      shadowRadius: 0,
-      elevation: 0,
-    },
     cardStyle: {
       backgroundColor: '#FDFEFF',
       padding: 0,
@@ -53,7 +45,7 @@ const HomeStackScreen = () =>
       headerTitleAlign: 'left',
     }} />
     <HomeStack.Screen name="Categories" component={CategoriesScreen} />
-    <HomeStack.Screen name="Laptops" component={LaptopsScreen} />
+    <HomeStack.Screen name="Category" component={CategoryScreen} />
   </HomeStack.Navigator>
 
 const AppStackScreen = () =>
