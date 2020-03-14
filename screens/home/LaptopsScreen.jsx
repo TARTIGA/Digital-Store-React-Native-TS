@@ -7,7 +7,7 @@ import { AuthContext } from 'app/context'
 const LaptopsScreen = ({ navigation }) => {
     return (
         <Container>
-            <Text>LaptopsScreen</Text>
+            <Text>111</Text>
         </Container>
     );
 }

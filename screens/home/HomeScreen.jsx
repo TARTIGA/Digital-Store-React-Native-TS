@@ -8,7 +8,6 @@ const HomeScreen = ({ navigation }) => {
     const { signOut } = useContext(AuthContext)
     return (
         <Container>
-            <Text>HomeScreen11</Text>
             <Button handler={() => navigation.push('Categories')} label={<Text>Categories</Text>} />
         </Container>
     );

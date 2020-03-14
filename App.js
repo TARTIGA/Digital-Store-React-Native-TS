@@ -24,14 +24,31 @@ const AppTabStack = createBottomTabNavigator();
 
 const HomeStack = createStackNavigator();
 
+const RootStack = createStackNavigator();
+
 const HomeStackScreen = () =>
-  <HomeStack.Navigator>
-    <HomeStack.Screen name="Home" component={HomeScreen} />
+  <HomeStack.Navigator screenOptions={{
+    headerTitleStyle: {
+      color: '#000', fontSize: 22,
+    },
+    headerStyle: {
+      height: 80,
+      shadowColor: 'transparent',
+      shadowOpacity: 0,
+      shadowOffset: { height: 0, },
+      shadowRadius: 0,
+      elevation: 0,
+    },
+  }}>
+    <HomeStack.Screen name="Home" component={HomeScreen} options={{
+      headerTitleStyle: {
+        color: '#000', fontSize: 26,
+      },
+      headerTitleAlign: 'left',
+    }} />
     <HomeStack.Screen name="Categories" component={CategoriesScreen} />
     <HomeStack.Screen name="Laptops" component={LaptopsScreen} />
   </HomeStack.Navigator>
-
-const RootStack = createStackNavigator();
 
 const AppStackScreen = () =>
   <AppTabStack.Navigator
