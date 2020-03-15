@@ -7,3 +7,8 @@ export { default as AutorizationScreen } from './AutorizationScreen';
 export { default as CreateAccountScreen } from './CreateAccountScreen';
 export { default as SignInScreen } from './SignInScreen';
 
+export { default as PromoScreen } from './PromoScreen';
+
+
+
+

@@ -4,10 +4,10 @@ import { Text } from 'react-native'
 import { Button } from 'app/components'
 import { AuthContext } from 'app/context'
 
-const CategoryScreen = ({ navigation }) => {
+const CardScreen = ({ navigation }) => {
     return (
         <Container>
-            <Text>CategoryScreen</Text>
+            <Text>CardScreen</Text>
         </Container>
     );
 }
@@ -17,4 +17,4 @@ flex: 1;
 padding:20px;
 `;
 
-export default CategoryScreen
+export default CardScreen

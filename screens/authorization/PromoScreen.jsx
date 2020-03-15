@@ -1,21 +1,23 @@
-import React, { useContext } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components/native'
 import { Image } from 'react-native'
-import { Link, Dots } from 'app/components'
+import { Link, Dots, Slider } from 'app/components'
 import { AuthContext } from 'app/context'
-const PromoImg = require('app/assets/img/World.png')
-
+const WorldSlide = require('app/assets/img/World.png')
+const DigitalSlide = require('app/assets/img/Digital.png')
+const PriceSlide = require('app/assets/img/Price.png')
 
 
 const LargeScreen = ({ navigation }) => {
-    const { signIn } = useContext(AuthContext)
+    const [images, setImages] = useState([
+        WorldSlide,
+        DigitalSlide,
+        PriceSlide,
+    ]);
     return (
         <Container >
             <ImageView>
-                <Image
-                    style={{ width: 256, height: 203 }}
-                    source={PromoImg}
-                />
+                <Slider images={images} autoplay={false} />
             </ImageView>
             <PromoTextBlock>
                 <PromoLabel>Large</PromoLabel>
@@ -53,9 +55,11 @@ margin-top:48px;
 `;
 
 const ImageView = styled.View`
+     flex:1;
      align-items:center;
      justify-content:center;
      margin-top:68;
+     background-color:#ffffff;
 `;
 
 

@@ -2,7 +2,7 @@ import React from 'react'
 import { SliderBox } from "react-native-image-slider-box";
 
 
-const Slider = ({ images }) => {
+const Slider = ({ images, dotted, timeout, autoplay, loop }) => {
     return (
         <SliderBox images={images}
             sliderBoxHeight={110}
@@ -14,7 +14,8 @@ const Slider = ({ images }) => {
                 borderRadius: 6,
                 marginHorizontal: 0,
                 padding: 0,
-                margin: 0
+                margin: 0,
+                display: dotted ? 'block' : 'none'
             }}
             parentWidth={340}
             paginationBoxStyle={{
@@ -28,11 +29,16 @@ const Slider = ({ images }) => {
             ImageComponentStyle={{ borderRadius: 15, width: '100%' }}
             resizeMode={'contain'}
             imageLoadingColor="#2196F3"
-            autoplay={3000}
-            circleLoop
+            autoplay={autoplay ? autoplay : timeout}
+            circleLoop={loop}
         />
     )
 }
-
+Slider.defaultProps = {
+    dotted: true,
+    timeout: 3000,
+    autoplay: false,
+    loop: true
+}
 
 export default Slider;

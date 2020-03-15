@@ -7,10 +7,10 @@ import { AuthContext } from 'app/context'
 const CategoriesScreen = ({ navigation }) => {
     return (
         <Container>
-            <Button handler={() => navigation.push('Category')} label={<Text>Laptops</Text>} />
-            <Button handler={() => navigation.push('Category')} label={<Text>Category</Text>} />
-            <Button handler={() => navigation.push('Category')} label={<Text>Category</Text>} />
-            <Button handler={() => navigation.push('Category')} label={<Text>Category</Text>} />
+            <Button handler={() => navigation.push('CardScreen')} label={<Text>Laptops</Text>} />
+            <Button handler={() => navigation.push('CardScreen')} label={<Text>Category</Text>} />
+            <Button handler={() => navigation.push('CardScreen')} label={<Text>Category</Text>} />
+            <Button handler={() => navigation.push('CardScreen')} label={<Text>Category</Text>} />
         </Container>
     );
 }

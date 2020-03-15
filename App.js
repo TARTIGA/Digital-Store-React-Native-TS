@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react'
-import { HomeScreen, CategoriesScreen, CategoryScreen } from 'app/screens/home'
+import { HomeScreen, CategoriesScreen } from 'app/screens/home'
 import { SearchScreen } from 'app/screens/search'
 import { BasketScreen } from 'app/screens/basket'
 import { UserScreen } from 'app/screens/user'
@@ -12,6 +12,10 @@ import {
   CreateAccountScreen,
   SignInScreen
 } from 'app/screens/authorization'
+
+import { CardScreen } from 'app/screens'
+
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -45,10 +49,9 @@ const HomeStackScreen = () =>
       headerTitleAlign: 'left',
     }} />
     <HomeStack.Screen name="Categories" component={CategoriesScreen} />
-    <HomeStack.Screen name="Category" component={CategoryScreen} />
   </HomeStack.Navigator>
 
-const AppStackScreen = () =>
+const AppTabStackScreen = () =>
   <AppTabStack.Navigator
     initialRouteName="Home"
     tabBarOptions={{
@@ -141,7 +144,10 @@ const AuthStackScreen = () =>
 const RootStackScreen = ({ userToken }) =>
   <RootStack.Navigator headerMode="none">
     {userToken ?
-      <RootStack.Screen name="App" component={AppStackScreen} /> :
+      (<>
+        <RootStack.Screen name="AppTabs" component={AppTabStackScreen} />
+        <RootStack.Screen name="CardScreen" component={CardScreen} />
+      </>) :
       <RootStack.Screen name="Auth" component={AuthStackScreen} />}
   </RootStack.Navigator>
 

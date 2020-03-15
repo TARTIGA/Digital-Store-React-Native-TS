@@ -20,7 +20,7 @@ const HomeScreen = ({ navigation }) => {
     return (
         <Container>
             <View >
-                <Slider images={images} />
+                <Slider images={images} autoplay={false} />
             </View>
             <Button handler={() => navigation.push('Categories')} label={<Text>Categories</Text>} />
             <View style={{ backgroundColor: 'red', flex: 1 }} />
@@ -31,16 +31,6 @@ const HomeScreen = ({ navigation }) => {
 const Container = styled.View`
 flex: 1;
 padding:20px;
-`;
-
-const ViewBox = styled.View`
-        padding: 10px;
-        padding-left: 20px;
-        padding-right: 20px;
-        justify-content:center;
-        width: 100%;
-        align-items: center;
-        height: 150px;
 `;
 
 export default HomeScreen
