@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import styled from 'styled-components/native'
-import { Text, View, Image } from 'react-native'
-import { Button, Slider, SliderBox } from 'app/components'
+import { Text, View } from 'react-native'
+import { Button, Slider } from 'app/components'
 import { AuthContext } from 'app/context'
 const ColumnSlide = require('app/assets/img/slides/Column.png')
 const iPhone11Slide = require('app/assets/img/slides/iPhone11pro.png')
@@ -19,9 +19,8 @@ const HomeScreen = ({ navigation }) => {
     ]);
     return (
         <Container>
-            {/* <Slider ></Slider> */}
             <View >
-                <SliderBox images={images} />
+                <Slider images={images} />
             </View>
             <Button handler={() => navigation.push('Categories')} label={<Text>Categories</Text>} />
             <View style={{ backgroundColor: 'red', flex: 1 }} />
