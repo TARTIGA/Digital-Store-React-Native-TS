@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components/native'
 import { Image } from 'react-native'
-import { Link, Dots } from '../../components'
-import { AuthContext } from '../../context'
-const PromoImg = require('../../assets/img/Price.png')
+import { Link, Dots } from 'app/components'
+import { AuthContext } from 'app/context'
+const PromoImg = require('app/assets/img/Price.png')
 
 
 const PriceScreen = ({ navigation }) => {

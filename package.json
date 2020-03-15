@@ -33,7 +33,9 @@
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "babel-preset-expo": "~8.0.0",
-    "react-native-svg-transformer": "^0.14.3"
+    "react-native-image-slider-box": "^1.0.12",
+    "react-native-svg-transformer": "^0.14.3",
+    "react-native-view-slider": "^1.1.1"
   },
   "private": true
 }
