@@ -8,21 +8,23 @@ const DigitalSlide = require('app/assets/img/Digital.png')
 const PriceSlide = require('app/assets/img/Price.png')
 
 
-const LargeScreen = ({ navigation }) => {
+const PromoScreen = ({ navigation }) => {
     const [images, setImages] = useState([
         WorldSlide,
         DigitalSlide,
         PriceSlide,
     ]);
+    console.log(Slider)
     return (
         <Container >
             <ImageView>
-                <Slider images={images} autoplay={false} />
+                <Slider images={images} autoplay={false} dotted={true}
+                    onCurrentImagePressed={index => console.warn(`image ${index} pressed`)}
+                    currentImageEmitter={index => console.warn(`current pos is: ${index}`)} />
             </ImageView>
             <PromoTextBlock>
-                <PromoLabel>Large</PromoLabel>
+                <PromoLabel>Large11</PromoLabel>
             </PromoTextBlock>
-            <Dots checkedIndex={0} />
             <SkipLinkView>
                 <Link text="next" fontSize={'18px'} handler={() => navigation.push('ExclusivityScreen')} />
             </SkipLinkView>
@@ -55,12 +57,16 @@ margin-top:48px;
 `;
 
 const ImageView = styled.View`
-     flex:1;
+     flex:0.7;
      align-items:center;
      justify-content:center;
      margin-top:68;
      background-color:#ffffff;
+     flex-direction: column;
+     width: 100%;
+     text-align: center;
+     margin: 10% 0;
 `;
 
 
-export default LargeScreen
+export default PromoScreen

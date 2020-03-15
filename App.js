@@ -10,7 +10,8 @@ import {
   PriceScreen,
   AutorizationScreen,
   CreateAccountScreen,
-  SignInScreen
+  SignInScreen,
+  PromoScreen
 } from 'app/screens/authorization'
 
 import { CardScreen } from 'app/screens'
@@ -139,6 +140,7 @@ const AuthStackScreen = () =>
       title: 'Sign In'
     }}
     />
+    {/* <AuthStack.Screen name="PromoScreen" component={PromoScreen} /> */}
   </AuthStack.Navigator>
 
 const RootStackScreen = ({ userToken }) =>
@@ -154,7 +156,7 @@ const RootStackScreen = ({ userToken }) =>
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true)
-  const [userToken, setUserToken] = useState(null)
+  const [userToken, setUserToken] = useState('token')
   const authContext = useMemo(() => {
     return {
       signIn: (token) => {

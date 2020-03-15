@@ -6,9 +6,9 @@ import { Text } from 'react-native'
 
 // TODO: REFACTOR THIS ?//
 
-const Button = ({ children, bgColor, width, handler, disabled, textColor, label, icon }) => {
+const Button = ({ bgColor, bRadius, width, height, handler, disabled, textColor, label, icon }) => {
     return (
-        <ButtonContainer bgColor={bgColor} width={width} disabled={disabled}>
+        <ButtonContainer bgColor={bgColor} width={width} height={height} disabled={disabled} bRadius={bRadius}>
             <ButtonInside onPress={handler} disabled={disabled}>
                 {icon ?
                     (
@@ -27,19 +27,22 @@ Button.defaultProps = {
     event: null,
     bgColor: theme.palette.secondary.main,
     width: '100%',
+    height: 48,
     disabled: false,
     textColor: theme.palette.primary.main,
     icon: null,
-    label: null
+    label: null,
+    bRadius: 0
 }
 
 const ButtonContainer = styled.View`
     background:${props => props.bgColor};
-    height:48px;
+    height:${props => props.height};
     border-radius:4px;
     width:${props => props.width};
     margin-top:20px;
     opacity:${props => props.disabled ? 0.5 : 1};
+    border-radius:${props => props.bRadius};
 `;
 
 const ButtonInside = styled.TouchableOpacity`
