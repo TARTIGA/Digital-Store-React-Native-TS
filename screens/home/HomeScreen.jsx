@@ -24,7 +24,7 @@ const HomeScreen = ({ navigation }) => {
     return (
         <Container>
             <View >
-                <Slider images={images} autoplay={false} />
+                <Slider images={images} autoplay={true} timeout={3000} />
             </View>
             <ButtonsRow>
                 <ButtonItem>
