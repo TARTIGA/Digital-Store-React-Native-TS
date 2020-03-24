@@ -21,8 +21,8 @@ const CategoriesScreen = ({ navigation }) => {
             key: 'smartphones',
         },
         {
-            label: 'Speakers',
-            key: 'speakers',
+            label: 'Laptops',
+            key: 'laptops',
         },
         {
             label: 'Columns',
@@ -69,7 +69,7 @@ const CategoriesScreen = ({ navigation }) => {
 
                 elevation: 3
             }}>
-                <ListRowInner>
+                <ListRowInner onPress={() => navigation.push('Category', { title: title })}>
                     <ListLabel >{title}</ListLabel>
                 </ListRowInner>
             </ListRow>

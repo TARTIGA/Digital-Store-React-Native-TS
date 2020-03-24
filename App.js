@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react'
-import { HomeScreen, CategoriesScreen } from 'app/screens/home'
+import { HomeScreen, CategoriesScreen, CategoryScreen } from 'app/screens/home'
 import { SearchScreen } from 'app/screens/search'
 import { BasketScreen } from 'app/screens/basket'
 import { UserScreen } from 'app/screens/user'
@@ -50,6 +50,7 @@ const HomeStackScreen = () =>
       headerTitleAlign: 'left',
     }} />
     <HomeStack.Screen name="Categories" component={CategoriesScreen} />
+    <HomeStack.Screen name="Category" component={CategoryScreen} />
   </HomeStack.Navigator>
 
 const AppTabStackScreen = () =>
