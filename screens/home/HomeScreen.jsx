@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import styled from 'styled-components/native'
-import { Text, View, Image } from 'react-native'
+import { Text, View } from 'react-native'
 import { Button, Slider } from 'app/components'
 import { AuthContext } from 'app/context'
 const ColumnSlide = require('app/assets/img/slides/Column.png')
@@ -10,6 +10,9 @@ const Surfacelaptop3Slide = require('app/assets/img/slides/Surfacelaptop3.png')
 
 const Monitor = require('app/assets/img/products/Monitor.png')
 const Smartphone = require('app/assets/img/products/Smartphone.png')
+const XpsLaptop = require('app/assets/img/products/XpsLaptop.png')
+
+import { FlatList } from 'react-native'
 
 import { FontAwesome } from '@expo/vector-icons';
 
@@ -21,6 +24,57 @@ const HomeScreen = ({ navigation }) => {
         LGGram17Slide,
         Surfacelaptop3Slide
     ]);
+
+    const [sellOuts, setSellOut] = useState([
+        {
+            label: 'Monitors',
+            imgSrc: Monitor,
+            key: 'Monitors',
+        },
+        {
+            label: 'Smartphone',
+            imgSrc: Smartphone,
+            key: 'Smartphone',
+        },
+        {
+            label: 'Laptops',
+            imgSrc: XpsLaptop,
+            key: 'Laptops',
+        },
+        {
+            label: 'Columns',
+            imgSrc: Smartphone,
+            key: 'Columns',
+        },
+        {
+            label: 'Phone',
+            imgSrc: Monitor,
+            key: 'Phone',
+        },
+        {
+            label: 'Note',
+            imgSrc: Smartphone,
+            key: 'Note',
+        },
+    ]);
+
+    const SellOutItem = ({ label, imgSrc }) => {
+        return (
+            <SellOutItemInner >
+                <DiscountLabel>
+                    <DiscountLabelText>-50%</DiscountLabelText>
+                </DiscountLabel>
+                <View style={{ height: 170, flex: 1, justifyContent: 'center' }}>
+                    <ItemImage
+                        source={imgSrc}
+                    />
+                </View>
+                <View><ItemLabel>{label}</ItemLabel></View>
+            </SellOutItemInner>
+        );
+    }
+
+
     return (
         <Container>
             <View >
@@ -70,30 +124,15 @@ const HomeScreen = ({ navigation }) => {
             </ButtonsRow>
             <SellOutView >
                 <SellOutLabel>Sell-out</SellOutLabel>
-                <Grid>
-                    <Item >
-                        <DiscountLabel>
-                            <DiscountLabelText>-50%</DiscountLabelText>
-                        </DiscountLabel>
-                        <View>
-                            <ItemImage
-                                style={{ width: 61, height: 130 }}
-                                source={Smartphone}
-                            />
-                        </View>
-                        <View><ItemLabel>Smartphones</ItemLabel></View>
-                    </Item>
-                    <Item >
-                        <DiscountLabel><Text>-50%</Text></DiscountLabel>
-                        <View>
-                            <ItemImage
-                                style={{ width: 97, height: 130 }}
-                                source={Monitor}
-                            />
-                        </View>
-                        <View><ItemLabel>Monitors</ItemLabel></View>
-                    </Item>
-                </Grid>
+                <FlatList
+                    data={sellOuts}
+                    columnWrapperStyle={{
+                        justifyContent: "space-between", marginTop: 16, flexWrap: 'wrap',
+                    }}
+                    numColumns={2}
+                    renderItem={({ item }) => <SellOutItem label={item.label} imgSrc={item.imgSrc} />}
+                    keyExtractor={(item) => item.key}
+                />
             </SellOutView>
         </Container>
     );
@@ -122,7 +161,7 @@ font-size: 14px;
 line-height: 16px;
 font-weight: 500;
 text-align: center;
-margin-top:6;
+margin-top:6px;
 `;
 
 const SellOutView = styled.View`
@@ -137,23 +176,13 @@ line-height: 28px;
 text-align: center;
 `;
 
-const Grid = styled.View`
-flex:1;
-width:100%;
-margin-top:16;
-justify-content:space-between;
-flex-direction:row;
-flex-wrap:wrap;
-`;
-
-const Item = styled.View`
-width: 48%;
-height: 100%;
+const SellOutItemInner = styled.View`
+flex:0.45;
+min-height:100px;
 background:#fff;
 border-radius: 6px;
-margin-bottom: 2%;
-box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.04);
-justify-content:space-around;
+margin-bottom: 2px;
+box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.05);
 align-items:center;
 padding:16px;
 `;
@@ -176,12 +205,12 @@ color: #1F53E4;
 `;
 
 const ItemImage = styled.Image`
-
+    margin:20px 0;
 `;
 
 const ItemLabel = styled.Text`
-font-weight: 500;
-font-size: 18px;
+font-weight: 600;
+font-size: 16px;
 line-height: 21px;
 `;
 

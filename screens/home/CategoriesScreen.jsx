@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/native'
-import { Text, View, FlatList, SafeAreaView } from 'react-native'
-import { Button } from 'app/components'
-import { AuthContext } from 'app/context'
-import Constants from 'expo-constants';
+import { FlatList } from 'react-native'
 
 const CategoriesScreen = ({ navigation }) => {
     const [categories, setcategories] = useState([
