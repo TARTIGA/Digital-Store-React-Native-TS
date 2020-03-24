@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import styled from 'styled-components/native'
-import { Text, View } from 'react-native'
+import { View, FlatList } from 'react-native'
 import { Button, Slider } from 'app/components'
 import { AuthContext } from 'app/context'
 const ColumnSlide = require('app/assets/img/slides/Column.png')
@@ -12,7 +12,6 @@ const Monitor = require('app/assets/img/products/Monitor.png')
 const Smartphone = require('app/assets/img/products/Smartphone.png')
 const XpsLaptop = require('app/assets/img/products/XpsLaptop.png')
 
-import { FlatList } from 'react-native'
 
 import { FontAwesome } from '@expo/vector-icons';
 
