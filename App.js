@@ -37,7 +37,7 @@ const HomeStackScreen = () =>
       color: '#000', fontSize: 22,
     },
     cardStyle: {
-      backgroundColor: '#FDFEFF',
+      backgroundColor: '#FAFAFA',
       padding: 0,
       paddingLeft: 16,
       paddingRight: 16,
