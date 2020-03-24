@@ -176,7 +176,7 @@ text-align: center;
 `;
 
 const SellOutItemInner = styled.View`
-flex:0.45;
+flex:0.48;
 min-height:100px;
 background:#fff;
 border-radius: 6px;
