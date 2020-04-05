@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Alert } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 import { Ionicons, FontAwesome5 } from '@expo/vector-icons';
 import styled from 'styled-components/native';
 
-const CategoryFilters = ({}) => {
+const CategoryFilters = ({ handleToggleChangeView }) => {
   const [filterByValue, setFilterByValue] = useState('Football');
   const [filterValue, setFilterValue] = useState('Filter1');
   const itemsArrayBy = [
@@ -15,10 +15,6 @@ const CategoryFilters = ({}) => {
     { label: 'Filter1', value: 'filter1' },
     { label: 'Filter2', value: 'filter2' },
   ];
-
-  const handleChangeView = () => {
-    Alert.alert('ChangeView');
-  };
   return (
     <View style={{ flexDirection: 'row' }}>
       <RNPickerSelect
@@ -69,7 +65,7 @@ const CategoryFilters = ({}) => {
           );
         }}
       />
-      <BtnChangeView onPress={handleChangeView}>
+      <BtnChangeView onPress={handleToggleChangeView}>
         <FontAwesome5 name="table" size={24} color="lightgrey" />
       </BtnChangeView>
     </View>

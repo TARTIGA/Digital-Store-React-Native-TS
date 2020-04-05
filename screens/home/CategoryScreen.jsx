@@ -1,6 +1,6 @@
 import React, { useContext, useState, useLayoutEffect } from 'react';
 import styled from 'styled-components/native';
-import { FlatList, Image, View, Text } from 'react-native';
+import { FlatList, Image, View, Text, Alert } from 'react-native';
 import { AuthContext } from 'app/context';
 import { ImageContainer, CategoryFilters } from 'app/components';
 
@@ -9,6 +9,15 @@ const Smartphone = require('app/assets/img/products/Smartphone.png');
 const XpsLaptop = require('app/assets/img/products/XpsLaptop.png');
 
 const CategoryScreen = ({ navigation, route }) => {
+  const defaultColumnStyle = {
+    justifyContent: 'space-between',
+    marginTop: 16,
+    flexWrap: 'wrap',
+  };
+  const [columnWrapperStyle, setColumnWrapperStyle] = useState(
+    defaultColumnStyle
+  );
+  const [numColumns, setNumColumns] = useState(2);
   const { signOut } = useContext(AuthContext);
   const { title } = route.params;
 
@@ -88,7 +97,7 @@ const CategoryScreen = ({ navigation, route }) => {
   const Item = ({ item }) => {
     const { label, imgSrc, price } = item;
     return (
-      <ItemInner>
+      <ItemInner numColumns={numColumns}>
         <ImageContainer height={100}>
           <Image
             source={imgSrc || null}
@@ -109,17 +118,24 @@ const CategoryScreen = ({ navigation, route }) => {
     );
   };
 
+  const handleToggleChangeView = () => {
+    if (numColumns === 2) {
+      setColumnWrapperStyle(null);
+      setNumColumns(1);
+    } else {
+      setColumnWrapperStyle(defaultColumnStyle);
+      setNumColumns(2);
+    }
+  };
+
   return (
     <Container>
-      <CategoryFilters />
+      <CategoryFilters handleToggleChangeView={handleToggleChangeView} />
       <FlatList
         data={items}
-        columnWrapperStyle={{
-          justifyContent: 'space-between',
-          marginTop: 16,
-          flexWrap: 'wrap',
-        }}
-        numColumns={2}
+        columnWrapperStyle={columnWrapperStyle}
+        numColumns={numColumns}
+        key={'key' + numColumns}
         renderItem={({ item }) => <Item item={item} />}
         keyExtractor={(item) => item.key}
       />
@@ -133,8 +149,8 @@ const Container = styled.View`
 `;
 
 const ItemInner = styled.View`
-  flex: 0.48;
-  height: 196px;
+  flex: ${(props) => (props.numColumns === 2 ? 0.48 : 1)};
+  height: ${(props) => (props.numColumns === 2 ? '196px' : '300px')};
   background: #fff;
   border-radius: 6px;
   box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.05);
