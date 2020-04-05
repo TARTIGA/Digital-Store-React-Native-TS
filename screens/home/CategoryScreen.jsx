@@ -2,7 +2,7 @@ import React, { useContext, useState, useLayoutEffect } from 'react';
 import styled from 'styled-components/native';
 import { FlatList, Image, View, Text } from 'react-native';
 import { AuthContext } from 'app/context';
-import { ImageContainer } from 'app/components';
+import { ImageContainer, CategoryFilters } from 'app/components';
 
 const Monitor = require('app/assets/img/products/Monitor.png');
 const Smartphone = require('app/assets/img/products/Smartphone.png');
@@ -111,17 +111,7 @@ const CategoryScreen = ({ navigation, route }) => {
 
   return (
     <Container>
-      <View>
-        <View>
-          <Text>Byprice</Text>
-        </View>
-        <View>
-          <Text>Filter</Text>
-        </View>
-        <View>
-          <Text>oo</Text>
-        </View>
-      </View>
+      <CategoryFilters />
       <FlatList
         data={items}
         columnWrapperStyle={{
