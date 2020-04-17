@@ -32,7 +32,11 @@ const HomeScreen = ({ navigation }) => {
       </View>
       <ButtonsRow>
         {homebtns.map((item, idx) => (
-          <RoundBtn key={idx.toString()} item={item} />
+          <RoundBtn
+            key={idx.toString()}
+            item={item}
+            handler={() => navigation.push(item.route)}
+          />
         ))}
       </ButtonsRow>
       <SellOutView>
@@ -45,7 +49,12 @@ const HomeScreen = ({ navigation }) => {
             flexWrap: 'wrap',
           }}
           numColumns={2}
-          renderItem={({ item }) => <SellOutItem item={item} />}
+          renderItem={({ item }) => (
+            <SellOutItem
+              item={item}
+              handler={() => navigation.push('Category', { title: item.label })}
+            />
+          )}
           keyExtractor={(item) => item.key}
         />
       </SellOutView>

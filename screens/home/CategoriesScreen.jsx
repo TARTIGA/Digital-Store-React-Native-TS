@@ -6,7 +6,7 @@ import { categoriesStore } from 'app/store';
 const CategoriesScreen = ({ navigation }) => {
   const [categories, setcategories] = useState(categoriesStore);
 
-  const Item = ({ title }) => {
+  const Item = ({ label }) => {
     return (
       <ListRow
         style={{
@@ -22,9 +22,9 @@ const CategoriesScreen = ({ navigation }) => {
         }}
       >
         <ListRowInner
-          onPress={() => navigation.push('Category', { title: title })}
+          onPress={() => navigation.push('Category', { title: label })}
         >
-          <ListLabel>{title}</ListLabel>
+          <ListLabel>{label}</ListLabel>
         </ListRowInner>
       </ListRow>
     );
@@ -34,7 +34,7 @@ const CategoriesScreen = ({ navigation }) => {
     <Container>
       <FlatList
         data={categories}
-        renderItem={({ item }) => <Item title={item.label} />}
+        renderItem={({ item }) => <Item label={item.label} />}
         keyExtractor={(item) => item.key}
       />
     </Container>

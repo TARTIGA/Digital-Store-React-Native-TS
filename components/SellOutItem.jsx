@@ -1,13 +1,13 @@
 import React from 'react';
 import theme from '../theme';
 import styled from 'styled-components/native';
-import { View, Image } from 'react-native';
+import { View, TouchableOpacity, Image } from 'react-native';
 import { ImageContainer } from 'app/components';
 
-const SellOutItem = ({ item }) => {
+const SellOutItem = ({ item, handler }) => {
   const { label, imgSrc, discount } = item;
   return (
-    <SellOutItemInner>
+    <SellOutItemInner onPress={handler}>
       <DiscountLabel>
         <DiscountLabelText>{discount}</DiscountLabelText>
       </DiscountLabel>
@@ -22,7 +22,7 @@ const SellOutItem = ({ item }) => {
 };
 
 SellOutItem.defaultProps = {};
-const SellOutItemInner = styled.View`
+const SellOutItemInner = styled.TouchableOpacity`
   flex: 0.48;
   min-height: 100px;
   background: #fff;

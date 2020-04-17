@@ -4,8 +4,8 @@ import styled from 'styled-components/native';
 import { Button } from 'app/components';
 import { FontAwesome } from '@expo/vector-icons';
 
-const RoundBtn = ({ item }) => {
-  const { icon, label, route } = item;
+const RoundBtn = ({ item, handler }) => {
+  const { icon, label } = item;
   return (
     <ButtonItem>
       <Button
@@ -20,7 +20,7 @@ const RoundBtn = ({ item }) => {
         bRadius={56}
         height={56}
         width={56}
-        handler={() => navigation.push(route)}
+        handler={handler}
       />
       <ButtonItemLabel>{label}</ButtonItemLabel>
     </ButtonItem>
