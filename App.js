@@ -99,6 +99,7 @@ const SearchStackScreen = () => (
         headerTitleAlign: 'left',
       }}
     />
+    {/* //TODO: HERE */}
     <SearchStack.Screen name="CardScreen" component={CardScreen} />
   </SearchStack.Navigator>
 );

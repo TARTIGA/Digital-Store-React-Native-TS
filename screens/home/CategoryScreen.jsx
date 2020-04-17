@@ -29,13 +29,12 @@ const CategoryScreen = ({ navigation, route }) => {
     return (
       <ItemInner
         numColumns={numColumns}
-        // onPress={() => navigation.push('CardScreen', { title: item.label })}
-        onPress={() =>
-          navigation.navigate('Search', {
-            screen: 'CardScreen',
-            params: { title: item.label },
-          })
-        }
+        // onPress={() =>
+        //   navigation.navigate('Search', {
+        //     screen: 'CardScreen',
+        //     params: { title: item.label },
+        //   })
+        // }
       >
         <ImageContainer height={100}>
           <Image
