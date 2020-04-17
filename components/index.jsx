@@ -5,3 +5,5 @@ export { default as Dots } from './Dots';
 export { default as Slider } from './Slider';
 export { default as ImageContainer } from './ImageContainer';
 export { default as CategoryFilters } from './CategoryFilters';
+export { default as SellOutItem } from './SellOutItem';
+export { default as RoundBtn } from './RoundBtn';

@@ -3,18 +3,11 @@ import { View, StyleSheet } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 import { Ionicons, FontAwesome5 } from '@expo/vector-icons';
 import styled from 'styled-components/native';
-
+import { filtersDefault, filtersByPrice } from 'app/store';
 const CategoryFilters = ({ handleToggleChangeView }) => {
   const [filterByValue, setFilterByValue] = useState('Football');
   const [filterValue, setFilterValue] = useState('Filter1');
-  const itemsArrayBy = [
-    { label: 'By price ↑', value: 'bypriceup' },
-    { label: 'By price ↓', value: 'bypricedown' },
-  ];
-  const itemsArrayFilter = [
-    { label: 'Filter1', value: 'filter1' },
-    { label: 'Filter2', value: 'filter2' },
-  ];
+
   return (
     <View style={{ flexDirection: 'row' }}>
       <RNPickerSelect
@@ -32,7 +25,7 @@ const CategoryFilters = ({ handleToggleChangeView }) => {
         }}
         useNativeAndroidPickerStyle={false}
         onValueChange={(value) => setFilterByValue(value)}
-        items={itemsArrayBy}
+        items={filtersByPrice}
         Icon={() => {
           return (
             <>
@@ -56,7 +49,7 @@ const CategoryFilters = ({ handleToggleChangeView }) => {
         }}
         useNativeAndroidPickerStyle={false}
         onValueChange={(value) => setFilterValue(value)}
-        items={itemsArrayFilter}
+        items={filtersDefault}
         Icon={() => {
           return (
             <>
