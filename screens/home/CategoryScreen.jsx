@@ -27,7 +27,16 @@ const CategoryScreen = ({ navigation, route }) => {
   const Item = ({ item }) => {
     const { label, imgSrc, price } = item;
     return (
-      <ItemInner numColumns={numColumns}>
+      <ItemInner
+        numColumns={numColumns}
+        // onPress={() => navigation.push('CardScreen', { title: item.label })}
+        onPress={() =>
+          navigation.navigate('Search', {
+            screen: 'CardScreen',
+            params: { title: item.label },
+          })
+        }
+      >
         <ImageContainer height={100}>
           <Image
             source={imgSrc || null}
@@ -78,7 +87,7 @@ const Container = styled.View`
   padding: 20px;
 `;
 
-const ItemInner = styled.View`
+const ItemInner = styled.TouchableOpacity`
   flex: ${(props) => (props.numColumns === 2 ? 0.48 : 1)};
   height: ${(props) => (props.numColumns === 2 ? '196px' : '300px')};
   background: #fff;

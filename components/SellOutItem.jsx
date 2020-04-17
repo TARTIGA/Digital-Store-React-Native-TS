@@ -1,7 +1,7 @@
 import React from 'react';
 import theme from '../theme';
 import styled from 'styled-components/native';
-import { View, TouchableOpacity, Image } from 'react-native';
+import { View, Image } from 'react-native';
 import { ImageContainer } from 'app/components';
 
 const SellOutItem = ({ item, handler }) => {

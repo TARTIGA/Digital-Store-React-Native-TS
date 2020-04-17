@@ -34,6 +34,7 @@ const AuthStack = createStackNavigator();
 const AppTabStack = createBottomTabNavigator();
 
 const HomeStack = createStackNavigator();
+const SearchStack = createStackNavigator();
 
 const RootStack = createStackNavigator();
 
@@ -68,7 +69,38 @@ const HomeStackScreen = () => (
     <HomeStack.Screen name="Favorites" component={FavoritesScreen} />
     <HomeStack.Screen name="Gifts" component={GiftsScreen} />
     <HomeStack.Screen name="Hits" component={HitsScreen} />
+    {/* <HomeStack.Screen name="CardScreen" component={CardScreen} /> */}
   </HomeStack.Navigator>
+);
+
+const SearchStackScreen = () => (
+  <SearchStack.Navigator
+    screenOptions={{
+      headerTitleStyle: {
+        color: '#000',
+        fontSize: 22,
+      },
+      cardStyle: {
+        backgroundColor: '#FAFAFA',
+        padding: 0,
+        paddingLeft: 16,
+        paddingRight: 16,
+      },
+    }}
+  >
+    <SearchStack.Screen
+      name="SearchScreen"
+      component={SearchScreen}
+      options={{
+        headerTitleStyle: {
+          color: '#000',
+          fontSize: 26,
+        },
+        headerTitleAlign: 'left',
+      }}
+    />
+    <SearchStack.Screen name="CardScreen" component={CardScreen} />
+  </SearchStack.Navigator>
 );
 
 const AppTabStackScreen = () => (
@@ -99,8 +131,8 @@ const AppTabStackScreen = () => (
       }}
     />
     <AppTabStack.Screen
-      name="SearchScreen"
-      component={SearchScreen}
+      name="Search"
+      component={SearchStackScreen}
       options={{
         tabBarIcon: ({ color }) => (
           <FontAwesome name="search" size={22} color={color} />
@@ -192,7 +224,6 @@ const RootStackScreen = ({ userToken }) => (
     {userToken ? (
       <>
         <RootStack.Screen name="AppTabs" component={AppTabStackScreen} />
-        <RootStack.Screen name="CardScreen" component={CardScreen} />
       </>
     ) : (
       <RootStack.Screen name="Auth" component={AuthStackScreen} />
