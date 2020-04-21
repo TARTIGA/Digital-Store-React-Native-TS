@@ -69,12 +69,12 @@ const HomeStackScreen = () => (
     <HomeStack.Screen name="Favorites" component={FavoritesScreen} />
     <HomeStack.Screen name="Gifts" component={GiftsScreen} />
     <HomeStack.Screen name="Hits" component={HitsScreen} />
-    {/* <HomeStack.Screen name="CardScreen" component={CardScreen} /> */}
   </HomeStack.Navigator>
 );
 
 const SearchStackScreen = () => (
   <SearchStack.Navigator
+    initialRouteName={'SearchScreen'}
     screenOptions={{
       headerTitleStyle: {
         color: '#000',

@@ -29,12 +29,13 @@ const CategoryScreen = ({ navigation, route }) => {
     return (
       <ItemInner
         numColumns={numColumns}
-        // onPress={() =>
-        //   navigation.navigate('Search', {
-        //     screen: 'CardScreen',
-        //     params: { title: item.label },
-        //   })
-        // }
+        onPress={() =>
+          navigation.navigate('Search', {
+            screen: 'CardScreen',
+            initial: false,
+            params: { title: item.label },
+          })
+        }
       >
         <ImageContainer height={100}>
           <Image
@@ -67,22 +68,24 @@ const CategoryScreen = ({ navigation, route }) => {
   };
 
   return (
-    <Container>
-      <CategoryFilters handleToggleChangeView={handleToggleChangeView} />
+    <>
+      <Container>
+        <CategoryFilters handleToggleChangeView={handleToggleChangeView} />
+      </Container>
       <FlatList
         data={items}
         columnWrapperStyle={columnWrapperStyle}
         numColumns={numColumns}
         key={'key' + numColumns}
-        renderItem={({ item }) => <Item item={item} />}
+        style={{ paddingHorizontal: 20 }}
+        renderItem={({ item, idx }) => <Item item={item} key={item.key} />}
         keyExtractor={(item) => item.key}
       />
-    </Container>
+    </>
   );
 };
 
 const Container = styled.View`
-  flex: 1;
   padding: 20px;
 `;
 
