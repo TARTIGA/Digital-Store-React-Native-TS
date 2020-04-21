@@ -1,4 +1,4 @@
-import { Monitor, Smartphone, XpsLaptop } from '../imgs';
+import { Monitor, Smartphone, XpsLaptop, IPhone } from '../imgs';
 export default [
   {
     label: 'Surface laptop 3',
@@ -62,13 +62,13 @@ export default [
   },
   {
     label: 'Phone',
-    imgSrc: Monitor,
+    imgSrc: IPhone,
     price: 11,
     key: 'Phone2',
   },
   {
     label: 'Note',
-    imgSrc: Smartphone,
+    imgSrc: IPhone,
     price: 12,
     key: 'Note2',
   },

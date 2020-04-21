@@ -33,7 +33,8 @@ const CategoryScreen = ({ navigation, route }) => {
           navigation.navigate('Search', {
             screen: 'CardScreen',
             initial: false,
-            params: { title: item.label },
+            title: 'CardScreen',
+            params: { item },
           })
         }
       >
