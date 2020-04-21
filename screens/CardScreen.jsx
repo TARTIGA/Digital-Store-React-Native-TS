@@ -5,20 +5,18 @@ import { Button } from 'app/components';
 import { AuthContext } from 'app/context';
 
 const CardScreen = ({ navigation, route }) => {
-  // const { title = 'default' } = route.params;
-  // useLayoutEffect(() => {
-  //   navigation.setOptions({ headerTitle: title || 'default' });
-  // }, [navigation, route]);
+  const { title = 'default' } = route.params;
+  useLayoutEffect(() => {
+    navigation.setOptions({ headerTitle: title });
+  }, [navigation, route]);
 
-  useEffect(() => {
-    console.log(['navigation', navigation]);
-  }, []);
+  // useEffect(() => {
+  //   console.log(['navigation', navigation]);
+  // }, []);
   return (
     <Container>
-      {/* <Text>{title || 'default'}</Text> */}
-      <Text>{'default'}</Text>
-
-      <Button handler={() => navigation.pop(1)} label={<Text>Pop</Text>} />
+      <Text>{title || 'default'}</Text>
+      {/* <Button handler={() => navigation.pop(1)} label={<Text>Pop</Text>} /> */}
     </Container>
   );
 };
