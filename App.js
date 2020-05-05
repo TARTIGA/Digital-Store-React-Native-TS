@@ -30,6 +30,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { AuthContext } from 'app/context';
 import { FontAwesome } from '@expo/vector-icons';
 
+import { Provider } from 'react-redux';
+import store from './store/store-redux';
+
 const AuthStack = createStackNavigator();
 const AppTabStack = createBottomTabNavigator();
 
@@ -249,11 +252,13 @@ const App = () => {
   }, []);
 
   return (
-    <AuthContext.Provider value={authContext}>
-      <NavigationContainer>
-        <RootStackScreen userToken={userToken} />
-      </NavigationContainer>
-    </AuthContext.Provider>
+    <Provider store={store}>
+      <AuthContext.Provider value={authContext}>
+        <NavigationContainer>
+          <RootStackScreen userToken={userToken} />
+        </NavigationContainer>
+      </AuthContext.Provider>
+    </Provider>
   );
 };
 
