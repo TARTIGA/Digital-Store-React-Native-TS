@@ -9,11 +9,13 @@ import theme from 'app/theme';
 const CardScreen = ({ navigation, route }) => {
   //TODO: для слайдера нужно делать перезапрос на imgs -> пока костыль
   const films = useSelector((state) => state.films);
+  const names = useSelector((state) => state.names);
   const dispatch = useDispatch();
   const { label, imgSrc } = route.params.item;
   const slides = [imgSrc, imgSrc, imgSrc];
   const itemParams = {
     params: [
+      slides,
       {
         label: 'Colors',
         list: ['#52514F', '#EBEBE4', '#6F7972', '#F5D8C0'],
@@ -29,6 +31,7 @@ const CardScreen = ({ navigation, route }) => {
     console.log(['navigation', navigation]);
     console.log(['route', route]);
     console.log(['films[0]', films[0]]);
+    console.log(['names[0]', names[0]]);
   }, []);
   return (
     <Container>
