@@ -7,3 +7,5 @@ export { default as ImageContainer } from './ImageContainer';
 export { default as CategoryFilters } from './CategoryFilters';
 export { default as SellOutItem } from './SellOutItem';
 export { default as RoundBtn } from './RoundBtn';
+export { default as IconWithBadge } from './IconWithBadge';
+export { default as TabBadge } from './TabBadge';

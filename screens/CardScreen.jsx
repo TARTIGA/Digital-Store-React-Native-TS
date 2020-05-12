@@ -4,7 +4,8 @@ import styled from 'styled-components/native';
 import { Text, View } from 'react-native';
 import { Button, Slider } from 'app/components';
 import { AuthContext } from 'app/context';
-import counterActions from '../actions/counter';
+import { increment } from '../actions/counter';
+import { addToBasket } from '../actions/basket';
 import theme from 'app/theme';
 
 const CardScreen = ({ navigation, route }) => {
@@ -36,18 +37,17 @@ const CardScreen = ({ navigation, route }) => {
     console.log(['route', route]);
     console.log('LOG: CardScreen -> films', films);
     console.log('LOG: CardScreen -> counter', counter);
+
+    console.log('LOG: CardScreen -> increment', increment);
   }, []);
 
   const handlerAddToBasket = (item) => {
-    dispatch(counterActions.increment());
+    dispatch(addToBasket(item));
   };
   return (
     <Container>
       <View>
-        <MainHeader>
-          {label || 'default'}' '{basketItems.length}
-        </MainHeader>
-        <MainHeader>{`COUNTER --- ${counter}`}</MainHeader>
+        <MainHeader>{label || 'default'}</MainHeader>
       </View>
       <ProductContainer>
         <Hightlight>

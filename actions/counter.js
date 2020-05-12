@@ -10,7 +10,4 @@ const decrement = () => {
   };
 };
 
-export default {
-  increment,
-  decrement,
-};
+export { increment, decrement };

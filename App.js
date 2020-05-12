@@ -29,6 +29,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { AuthContext } from 'app/context';
 import { FontAwesome } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
+import { TabBadge } from 'app/components';
 
 import { Provider } from 'react-redux';
 import store from './store/store-redux';
@@ -110,6 +112,32 @@ const SearchStackScreen = () => (
 const AppTabStackScreen = () => (
   <AppTabStack.Navigator
     initialRouteName="Home"
+    //TODO: add badge TabBar error!!
+    // screenOptions={({ route }) => ({
+    //   tabBarIcon: ({ focused, color, size }) => {
+    //     if (route.name === 'Home') {
+    //       return (
+    //         <TabBadge
+    //           name={
+    //             focused
+    //               ? 'ios-information-circle'
+    //               : 'ios-information-circle-outline'
+    //           }
+    //           size={size}
+    //           color={color}
+    //         />
+    //       );
+    //     } else if (route.name === 'Settings') {
+    //       return (
+    //         <Ionicons
+    //           name={focused ? 'ios-list-box' : 'ios-list'}
+    //           size={size}
+    //           color={color}
+    //         />
+    //       );
+    //     }
+    //   },
+    // })}
     tabBarOptions={{
       activeTintColor: '#0001FC',
       inactiveTintColor: '#000',
