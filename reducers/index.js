@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
-import filmReducer from './films';
-import namesReducer from './names';
+import films from './films';
+import basket from './basket';
+import counter from './counter';
 
-const reducer = combineReducers({
-  filmReducer,
-  namesReducer,
+const rootReducer = combineReducers({
+  films,
+  basket,
+  counter,
 });
 
-export default reducer;
+export default rootReducer;

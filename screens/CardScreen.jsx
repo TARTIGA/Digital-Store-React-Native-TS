@@ -4,14 +4,19 @@ import styled from 'styled-components/native';
 import { Text, View } from 'react-native';
 import { Button, Slider } from 'app/components';
 import { AuthContext } from 'app/context';
+import counterActions from '../actions/counter';
 import theme from 'app/theme';
 
 const CardScreen = ({ navigation, route }) => {
   //TODO: для слайдера нужно делать перезапрос на imgs -> пока костыль
+  ///////////////////
+  const counter = useSelector((state) => state.counter);
+  ////////////////////
   const [activeIdx, setActiveIdx] = useState(0);
-  const films = useSelector((state) => state.films);
-  const names = useSelector((state) => state.names);
   const dispatch = useDispatch();
+  const films = useSelector((state) => state.films);
+  const basketItems = useSelector((state) => state.basket.items);
+  const { item } = route.params;
   const { label, imgSrc } = route.params.item;
   const slides = [imgSrc, imgSrc, imgSrc];
   const itemParams = {
@@ -29,11 +34,20 @@ const CardScreen = ({ navigation, route }) => {
   useEffect(() => {
     console.log(['navigation', navigation]);
     console.log(['route', route]);
+    console.log('LOG: CardScreen -> films', films);
+    console.log('LOG: CardScreen -> counter', counter);
   }, []);
+
+  const handlerAddToBasket = (item) => {
+    dispatch(counterActions.increment());
+  };
   return (
     <Container>
       <View>
-        <MainHeader>{label || 'default'}</MainHeader>
+        <MainHeader>
+          {label || 'default'}' '{basketItems.length}
+        </MainHeader>
+        <MainHeader>{`COUNTER --- ${counter}`}</MainHeader>
       </View>
       <ProductContainer>
         <Hightlight>
@@ -71,9 +85,7 @@ const CardScreen = ({ navigation, route }) => {
       <Button
         bgColor={theme.palette.primary.main}
         textColor={theme.palette.secondary.main}
-        handler={() => {
-          alert(films[0]);
-        }}
+        handler={() => handlerAddToBasket(item)}
         label={<Text>Add to Basket</Text>}
       />
     </Container>

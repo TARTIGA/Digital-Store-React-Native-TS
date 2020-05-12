@@ -1,4 +1,5 @@
-function counter(state = 0, action) {
+const INITIAL_STATE = 1;
+const counter = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case 'INCREMENT':
       return state + 1;
@@ -7,4 +8,6 @@ function counter(state = 0, action) {
     default:
       return state;
   }
-}
+};
+
+export default counter;
