@@ -8,67 +8,65 @@ import theme from 'app/theme';
 
 const CardScreen = ({ navigation, route }) => {
   //TODO: для слайдера нужно делать перезапрос на imgs -> пока костыль
+  const [activeIdx, setActiveIdx] = useState(0);
   const films = useSelector((state) => state.films);
   const names = useSelector((state) => state.names);
   const dispatch = useDispatch();
   const { label, imgSrc } = route.params.item;
   const slides = [imgSrc, imgSrc, imgSrc];
   const itemParams = {
-    params: [
-      slides,
-      {
-        label: 'Colors',
-        list: ['#52514F', '#EBEBE4', '#6F7972', '#F5D8C0'],
-      },
-      {
-        label: 'Memory',
-        list: ['64', '256', '512'],
-      },
-    ],
+    slides,
+    colors: {
+      label: 'Colors',
+      list: ['#52514F', '#EBEBE4', '#6F7972', '#F5D8C0'],
+    },
+    memory: {
+      label: 'Memory',
+      list: ['64', '256', '512'],
+    },
   };
 
   useEffect(() => {
     console.log(['navigation', navigation]);
     console.log(['route', route]);
-    console.log(['films[0]', films[0]]);
-    console.log(['names[0]', names[0]]);
   }, []);
   return (
     <Container>
       <View>
-        <Text>{label || 'default'}</Text>
+        <MainHeader>{label || 'default'}</MainHeader>
       </View>
       <ProductContainer>
-        <Slider images={slides} autoplay={false} />
+        <Hightlight>
+          <HightlightLabel>New</HightlightLabel>
+        </Hightlight>
+        <Slider images={itemParams.slides} autoplay={false} />
       </ProductContainer>
       <Row>
-        <Text>Color</Text>
+        <LabelParams>Color</LabelParams>
       </Row>
+      <ColorPicker>
+        {itemParams &&
+          itemParams.colors.list.map((item, idx) => (
+            <ColorItem
+              key={item + idx.toString()}
+              background={item}
+              active={activeIdx === idx}
+            />
+          ))}
+      </ColorPicker>
       <Row>
-        <View>
-          <Text>*</Text>
-        </View>
-        <View>
-          <Text>*</Text>
-        </View>
-        <View>
-          <Text>*</Text>
-        </View>
+        <LabelParams>Memory</LabelParams>
       </Row>
-      <Row>
-        <Text>Memory</Text>
-      </Row>
-      <Row>
-        <View>
-          <Text>64 gb</Text>
-        </View>
-        <View>
-          <Text>256 gb</Text>
-        </View>
-        <View>
-          <Text>512 gb</Text>
-        </View>
-      </Row>
+      <MemoryPicker>
+        {itemParams &&
+          itemParams.memory.list.map((item, idx) => (
+            <MemoryItem key={item + idx.toString()}>
+              <MemoryItemLabel active={activeIdx === idx}>
+                {item}
+              </MemoryItemLabel>
+            </MemoryItem>
+          ))}
+      </MemoryPicker>
       {/* <Button handler={() => navigation.pop(1)} label={<Text>Pop</Text>} /> */}
       <Button
         bgColor={theme.palette.primary.main}
@@ -88,13 +86,76 @@ const Container = styled.View`
 `;
 const ProductContainer = styled.View`
   flex-direction: row;
-  border: 1px solid blue;
   padding: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  margin-top: 24px;
 `;
+
+const Hightlight = styled.View`
+  display: flex;
+  position: absolute;
+  background-color: #e0ecf8;
+  padding: 3px 5px;
+`;
+
+const HightlightLabel = styled.Text`
+  font-size: 14px;
+  font-weight: 700;
+  color: #0001fc;
+`;
+
 const Row = styled.View`
   flex-direction: row;
-  border: 1px solid red;
+`;
+
+const MainHeader = styled.Text`
+  font-size: 24px;
+  font-weight: 700;
+`;
+
+const ColorPicker = styled.View`
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+`;
+
+const ColorItem = styled.TouchableOpacity`
+  width: 36px;
+  height: 36px;
+  background-color: ${(props) => props.background || '#000'};
+  border-radius: 36px;
+  margin-left: 16px;
+  border-width: 3px;
+  border-color: ${(props) => (props.active ? '#0001FC' : 'transparent')};
+`;
+
+const MemoryPicker = styled.View`
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+`;
+
+const MemoryItem = styled.TouchableOpacity`
+  margin-left: 4px;
+  height: 42px;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
+
+const MemoryItemLabel = styled.Text`
+  color: ${(props) => (props.active ? '#0001FC' : '#a7a9be')};
+  font-size: 18px;
+  font-weight: ${(props) => (props.active ? 700 : 500)};
+`;
+
+const LabelParams = styled.Text`
+  font-size: 18px;
+  color: #000;
+  font-weight: 700;
+  padding-bottom: 24px;
 `;
 
 export default CardScreen;
