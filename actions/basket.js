@@ -1,7 +1,8 @@
-const addToBasket = () => {
+const setToBasket = () => {
   return {
-    type: 'ADD_TO_BASKET',
+    type: 'SET_TO_BASKET',
+    payload: action.payload,
   };
 };
 
-export { addToBasket };
+export { setToBasket };

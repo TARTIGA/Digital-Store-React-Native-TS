@@ -5,7 +5,7 @@ import { Text, View } from 'react-native';
 import { Button, Slider } from 'app/components';
 import { AuthContext } from 'app/context';
 import { increment } from '../actions/counter';
-import { addToBasket } from '../actions/basket';
+import { setToBasket } from '../actions/basket';
 import theme from 'app/theme';
 
 const CardScreen = ({ navigation, route }) => {
@@ -41,8 +41,8 @@ const CardScreen = ({ navigation, route }) => {
     console.log('LOG: CardScreen -> increment', increment);
   }, []);
 
-  const handlerAddToBasket = (item) => {
-    dispatch(addToBasket(item));
+  const handlerSetToBasket = (item) => {
+    dispatch(setToBasket(item));
   };
   return (
     <Container>
@@ -85,7 +85,7 @@ const CardScreen = ({ navigation, route }) => {
       <Button
         bgColor={theme.palette.primary.main}
         textColor={theme.palette.secondary.main}
-        handler={() => handlerAddToBasket(item)}
+        handler={() => handlerSetToBasket(item)}
         label={<Text>Add to Basket</Text>}
       />
     </Container>
