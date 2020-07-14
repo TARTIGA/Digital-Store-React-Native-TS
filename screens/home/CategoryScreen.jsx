@@ -1,3 +1,4 @@
+// @flow
 import React, { useContext, useState, useLayoutEffect } from 'react';
 import styled from 'styled-components/native';
 import { FlatList, Image, View, Text, Alert } from 'react-native';

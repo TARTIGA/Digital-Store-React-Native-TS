@@ -1,19 +1,20 @@
-import React from 'react'
-import styled from 'styled-components/native'
-import { Text } from 'react-native'
+// @flow
+import React from 'react';
+import styled from 'styled-components/native';
+import { Text } from 'react-native';
 
 const SplashScreen = () => {
-    return (
-        <Container>
-            <Text>Loading...</Text>
-        </Container>
-    );
-}
+  return (
+    <Container>
+      <Text>Loading...</Text>
+    </Container>
+  );
+};
 
 const Container = styled.View`
-flex: 1;
-align-items:center;
-justify-content:center;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
 `;
 
-export default SplashScreen
+export default SplashScreen;

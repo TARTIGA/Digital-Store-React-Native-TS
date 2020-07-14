@@ -1,3 +1,4 @@
+// @flow
 import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';

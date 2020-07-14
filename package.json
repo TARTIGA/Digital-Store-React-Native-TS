@@ -31,7 +31,9 @@
     "styled-components": "^5.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.10.5",
+    "@babel/preset-flow": "^7.10.4",
     "babel-preset-expo": "~8.0.0",
     "react-native-image-slider-box": "^1.0.12",
     "react-native-picker-select": "^6.6.0",

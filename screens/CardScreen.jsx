@@ -1,17 +1,16 @@
+// @flow
 import React, { useContext, useState, useEffect, useLayoutEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components/native';
 import { Text, View } from 'react-native';
 import { Button, Slider } from 'app/components';
 import { AuthContext } from 'app/context';
-import { increment } from '../actions/counter';
 import { setToBasket } from '../actions/basket';
 import theme from 'app/theme';
 
 const CardScreen = ({ navigation, route }) => {
   //TODO: для слайдера нужно делать перезапрос на imgs -> пока костыль
   ///////////////////
-  const counter = useSelector((state) => state.counter);
   ////////////////////
   const [activeIdx, setActiveIdx] = useState(0);
   const dispatch = useDispatch();
@@ -36,9 +35,6 @@ const CardScreen = ({ navigation, route }) => {
     console.log(['navigation', navigation]);
     console.log(['route', route]);
     console.log('LOG: CardScreen -> films', films);
-    console.log('LOG: CardScreen -> counter', counter);
-
-    console.log('LOG: CardScreen -> increment', increment);
   }, []);
 
   const handlerSetToBasket = (item) => {

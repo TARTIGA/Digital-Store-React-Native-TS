@@ -1,3 +1,4 @@
+// @flow
 import React, { useContext, useState } from 'react';
 import styled from 'styled-components/native';
 import { View, FlatList } from 'react-native';
