@@ -1,4 +1,4 @@
-import { SET_FIELD, GET_USER, START, SUCCESS, FAIL } from './constants';
+import { SET_FIELD, GET_USER, START, SUCCESS, FAIL } from '../constants';
 
 const INITIAL_STATE = {
   name: '',
