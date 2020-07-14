@@ -1,16 +1,16 @@
-import { SET_ORDERS, START, SUCCESS, FAIL } from './SET_ORDERS';
+import { GET_PRODUCTS, START, SUCCESS, FAIL } from './constants';
 
 const INITIAL_STATE = {
   items: [],
 };
 
-const orders = (state = INITIAL_STATE, action) => {
+const user = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case `${SET_ORDERS}${START}`:
+    case `${GET_PRODUCTS}${START}`:
       return { ...state, items: [] };
-    case `${SET_ORDERS}${SUCCESS}`:
+    case `${GET_PRODUCTS}${SUCCESS}`:
       return { ...state, items: [...action.payload] };
-    case `${SET_ORDERS}${FAIL}`:
+    case `${GET_PRODUCTS}${FAIL}`:
       return { ...state, items: [] };
     default:
       return state;
