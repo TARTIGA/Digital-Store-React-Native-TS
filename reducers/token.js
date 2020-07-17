@@ -21,4 +21,4 @@ const token = (state = initialState, action) => {
       return state;
   }
 };
-export { initialState as tokenInitialState };
+export default token;

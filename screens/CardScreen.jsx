@@ -5,8 +5,9 @@ import styled from 'styled-components/native';
 import { Text, View } from 'react-native';
 import { Button, Slider } from 'app/components';
 import { AuthContext } from 'app/context';
-import { setToBasket } from 'app/actions/basket';
+import { setToBasket, deleteFromBasket } from 'app/actions/basket';
 import theme from 'app/theme';
+import showAlert from 'app/helpers/showAlert';
 
 const CardScreen = ({ navigation, route }) => {
   //TODO: for slider - reduce items
@@ -17,6 +18,7 @@ const CardScreen = ({ navigation, route }) => {
   const basketItems = useSelector((state) => state.basket.items);
   const { item } = route.params;
   const { label, imgSrc } = route.params.item;
+  const [itemInBasket, setItemInBasket] = useState(false);
   const slides = [imgSrc, imgSrc, imgSrc];
   const itemParams = {
     slides,
@@ -29,19 +31,44 @@ const CardScreen = ({ navigation, route }) => {
       list: ['64', '256', '512'],
     },
   };
+  const BTN_LABEL_ADD_TO_BASKET = 'Add to Basket';
+  const BTN_LABEL_DELETE_FROM_BASKET = 'DELETE from Basket';
 
   useEffect(() => {
-    console.log(['navigation', navigation]);
-    console.log(['route', route]);
-  }, []);
-
-  useEffect(() => {
-    console.log(['basketItems', basketItems]);
+    // console.log(['navigation', navigation]);
+    // console.log(['route', route]);
+    // checkItemInBasket(item)
+    showAlert('basketItems', JSON.stringify(basketItems));
+     checkItemInBasket(item)
   }, [basketItems]);
 
+
+  const checkItemInBasket = (item) => {
+    basketItems.forEach(element => {
+      if(element.id == item.id){
+        setItemInBasket(true)
+      } else {
+        setItemInBasket(false)
+      }
+    });
+  }
+//BASKET ITEMS BUG NULL
   const handlerSetToBasket = (item) => {
-    dispatch(setToBasket(item));
+    checkItemInBasket(item)
+    if(!itemInBasket){
+       dispatch(setToBasket([...basketItems,item]));
+    } else {
+      const newBasketItems = basketItems.filter((element)=> {
+        element.id !== item.id
+      })
+       showAlert('newBasketItems', JSON.stringify(newBasketItems));
+      dispatch(deleteFromBasket([...newBasketItems,item]));
+    }
   };
+  const handlerSetActive = (item, idx) => {
+    showAlert(item);
+    setActiveIdx(idx)
+  }
   return (
     <Container>
       <View>
@@ -63,6 +90,7 @@ const CardScreen = ({ navigation, route }) => {
               key={item + idx.toString()}
               background={item}
               active={activeIdx === idx}
+              onPress={()=>handlerSetActive(item,idx)}
             />
           ))}
       </ColorPicker>
@@ -84,7 +112,7 @@ const CardScreen = ({ navigation, route }) => {
         bgColor={theme.palette.primary.main}
         textColor={theme.palette.secondary.main}
         handler={() => handlerSetToBasket(item)}
-        label={<Text>Add to Basket</Text>}
+        label={<Text>{itemInBasket?  BTN_LABEL_DELETE_FROM_BASKET :BTN_LABEL_ADD_TO_BASKET }</Text>}
       />
     </Container>
   );

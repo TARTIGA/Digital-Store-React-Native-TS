@@ -8,6 +8,7 @@ const CategoriesScreen = ({ navigation }) => {
   const [categories, setcategories] = useState(categoriesStore);
 
   const Item = ({ label }) => {
+    //TODO: create LIST component
     return (
       <ListRow
         style={{

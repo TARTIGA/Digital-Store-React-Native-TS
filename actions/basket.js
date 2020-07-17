@@ -1,11 +1,16 @@
 /* @flow */
 import type { TDispatch } from '../types/core';
-import {SET_TO_BASKET,GET_BASKET,START,SUCCESS, FAIL  } from 'app/constants';
+import {SET_TO_BASKET, DELETE_FROM_BASKET, GET_BASKET,START,SUCCESS, FAIL  } from 'app/constants';
 //addHeaders import
 
-export const setToBasket = (item) => ({
+export const setToBasket = (payload) => ({
 	type: SET_TO_BASKET,
-	payload: item,
+	payload
+});
+
+export const deleteFromBasket = (payload) => ({
+	type: DELETE_FROM_BASKET,
+	payload
 });
 
 export const getBasketItems = () => (

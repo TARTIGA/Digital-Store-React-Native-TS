@@ -12,7 +12,7 @@ const INITIAL_STATE = {
 const user = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case SET_FIELD:
-      return { ...state, field };
+      return { ...state, ...action.payload };
     case `${GET_USER}${START}`:
       return { ...state };
     case `${GET_USER}${SUCCESS}`:
