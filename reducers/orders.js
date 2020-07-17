@@ -1,4 +1,4 @@
-import { SET_ORDERS, START, SUCCESS, FAIL } from '../constants';
+import { SET_ORDERS, GET_ORDERS, START, SUCCESS, FAIL } from '../constants';
 
 const INITIAL_STATE = {
   items: [],
@@ -6,12 +6,8 @@ const INITIAL_STATE = {
 
 const orders = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case `${SET_ORDERS}${START}`:
-      return { ...state, items: [] };
-    case `${SET_ORDERS}${SUCCESS}`:
+    case `${SET_ORDERS}`:
       return { ...state, items: [...action.payload] };
-    case `${SET_ORDERS}${FAIL}`:
-      return { ...state, items: [] };
     case `${GET_ORDERS}${START}`:
       return { ...state, items: [] };
     case `${GET_ORDERS}${SUCCESS}`:
@@ -22,4 +18,4 @@ const orders = (state = INITIAL_STATE, action) => {
       return state;
   }
 };
-export default user;
+export default orders;
