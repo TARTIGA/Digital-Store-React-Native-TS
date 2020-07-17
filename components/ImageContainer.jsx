@@ -1,8 +1,12 @@
 // @flow
 import React from 'react';
 import styled from 'styled-components/native';
+import type { TImageContainer} from '../types/core';
+import type { Node } from 'react';
 
-const ImageContainer = ({ height, children }) => {
+
+
+const ImageContainer = ({ height, children }:TImageContainer):Node => {
   return <ImageWrapper height={height}>{children}</ImageWrapper>;
 };
 ImageContainer.defaultProps = {

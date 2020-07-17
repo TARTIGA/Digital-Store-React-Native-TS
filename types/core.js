@@ -6,8 +6,6 @@ export type TAction = {
   act?: any,
 };
 
-export type TISODate = string;
-
 export type TPromiseAction = Promise<TAction>;
 
 // eslint-disable-next-line no-use-before-define
@@ -17,17 +15,56 @@ export type TDispatch = (
   TAction | TPromiseAction | TThunkAction | Array<TAction>
 ) => void;
 
-export type TAddToFavorites = (number, number, () => void) => void;
-
-export type TDeleteFromFavorites = (number, number, () => void) => void;
-
-export type TSeoData = {
-  metaTitle: string,
-  metaDescription: string,
-  metaKeywords: string,
+export type TLink = {
+  text: String,
+  color: String,
+  fontSize:String,
+  fontWeight:Number,
+  handler:<T>(param: T) => T
 };
 
-export type TUser = {
-  citySlug: string,
-  cityIds: number[],
+export type TSlider = {
+  images:Array<any>,
+  dotted:Boolean,
+  timeout:Number,
+  autoplay:Boolean,
+  loop:Boolean,
+  parentWidth:Number,
+  resizeMode:String,
 };
+
+export type TSellOut = {
+  text: String,
+  color: String,
+  fontSize:String,
+  fontWeight:Number,
+  handler:<T>(param: T) => T
+};
+
+export type TIconBadge= {
+  name:String,
+  badgeCount:Number,
+  color:String, 
+  size:String
+};
+
+
+export type TButton= {
+  bgColor:String,
+  bRadius:Number,
+  width:String,
+  height:Number,
+  handler:<T>(param: T) => T,
+  disabled:Boolean,
+  textColor:String
+  label:String,
+  icon:any
+};
+
+export type TItemHandler = {
+  item: any,
+  handler:<T>(param: T) => T
+};
+
+
+

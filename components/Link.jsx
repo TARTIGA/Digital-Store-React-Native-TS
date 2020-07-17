@@ -1,10 +1,12 @@
 // @flow
 import React from 'react';
+import type { Node } from 'react';
 //Use Context here
+import type { TLink} from '../types/core';
 import theme from '../theme';
 import styled from 'styled-components/native';
 
-const Link = ({ text, color, fontSize, fontWeight, handler }) => {
+const Link = ({ text, color, fontSize, fontWeight, handler }:TLink):Node => {
   return (
     <LinkContainer
       onPress={handler}

@@ -9,7 +9,7 @@ import { setToBasket } from '../actions/basket';
 import theme from 'app/theme';
 
 const CardScreen = ({ navigation, route }) => {
-  //TODO: для слайдера нужно делать перезапрос на imgs -> пока костыль
+  //TODO: for slider - reduce items
   ///////////////////
   ////////////////////
   const [activeIdx, setActiveIdx] = useState(0);

@@ -1,10 +1,11 @@
 // @flow
 import React from 'react';
 import styled from 'styled-components/native';
+import type { Node } from 'react';
 //Use Context here
 import theme from '../theme';
 
-const CustomTextInput = (props) => {
+const CustomTextInput = (props):Node=> {
   return (
     <TextInputContainer>
       <TextInputInner {...props} />

@@ -1,11 +1,12 @@
 // @flow
 import React, { useState } from 'react';
+import type { Node } from 'react';
 import { View, StyleSheet } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 import { Ionicons, FontAwesome5 } from '@expo/vector-icons';
 import styled from 'styled-components/native';
 import { filtersDefault, filtersByPrice } from 'app/store';
-const CategoryFilters = ({ handleToggleChangeView }) => {
+const CategoryFilters = ({ handleToggleChangeView }):Node => {
   const [filterByValue, setFilterByValue] = useState('Football');
   const [filterValue, setFilterValue] = useState('Filter1');
 

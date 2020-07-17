@@ -2,8 +2,12 @@
 import React from 'react';
 import theme from '../theme';
 import styled from 'styled-components/native';
+import type { TLink} from '../types/core';
+import type { Node } from 'react';
 
-const ParamsRow = ({ text, color, fontSize, fontWeight, handler }) => {
+
+
+const ParamsRow = ({ text, color, fontSize, fontWeight, handler }:TLink):Node => {
   return (
     <ParamsRowContainer
       onPress={handler}

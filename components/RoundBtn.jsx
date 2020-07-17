@@ -4,8 +4,12 @@ import theme from '../theme';
 import styled from 'styled-components/native';
 import { Button } from 'app/components';
 import { FontAwesome } from '@expo/vector-icons';
+import type { Node } from 'react';
+import type { TItemHandler} from '../types/core';
 
-const RoundBtn = ({ item, handler }) => {
+
+
+const RoundBtn = ({ item, handler }:TItemHandler):Node => {
   const { icon, label } = item;
   return (
     <ButtonItem>

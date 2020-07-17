@@ -2,8 +2,12 @@
 import React from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { Text, View } from 'react-native';
+import type { TIconBadge} from '../types/core';
+import type { Node } from 'react';
 
-const IconWithBadge = ({ name, badgeCount, color, size }) => {
+
+
+const IconWithBadge = ({ name, badgeCount, color, size }:TIconBadge):Node => {
   return (
     <View style={{ width: 24, height: 24, margin: 5 }}>
       <Ionicons name={name} size={size} color={color} />

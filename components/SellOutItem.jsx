@@ -4,8 +4,12 @@ import theme from '../theme';
 import styled from 'styled-components/native';
 import { View, Image } from 'react-native';
 import { ImageContainer } from 'app/components';
+import type { Node } from 'react';
+import type { TItemHandler} from '../types/core';
 
-const SellOutItem = ({ item, handler }) => {
+
+
+const SellOutItem = ({ item, handler }:TItemHandler):Node => {
   const { label, imgSrc, discount } = item;
   return (
     <SellOutItemInner onPress={handler}>

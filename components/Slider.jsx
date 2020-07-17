@@ -1,6 +1,8 @@
 // @flow
 import React from 'react';
 import { SliderBox } from 'react-native-image-slider-box';
+import type { TSlider} from '../types/core';
+import type { Node } from 'react';
 
 const Slider = ({
   images,
@@ -10,7 +12,7 @@ const Slider = ({
   loop,
   parentWidth,
   resizeMode,
-}) => {
+}:TSlider):Node => {
   return (
     <SliderBox
       images={images}

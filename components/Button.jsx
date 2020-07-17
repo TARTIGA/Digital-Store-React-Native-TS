@@ -4,6 +4,8 @@ import styled from 'styled-components/native';
 //Use Context here
 import theme from 'app/theme';
 import { Text } from 'react-native';
+import type { TButton} from '../types/core';
+import type { Node } from 'react';
 
 // TODO: REFACTOR THIS ?//
 
@@ -17,7 +19,7 @@ const Button = ({
   textColor,
   label,
   icon,
-}) => {
+}:TButton):Node => {
   return (
     <ButtonContainer
       bgColor={bgColor}

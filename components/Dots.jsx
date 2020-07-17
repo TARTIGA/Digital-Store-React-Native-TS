@@ -2,8 +2,14 @@
 import React from 'react';
 // Fake component
 import styled from 'styled-components/native';
+import type { Node } from 'react';
 
-const Dots = ({ checkedIndex }) => {
+
+type TDotIndex= {
+  checkedIndex: Number,
+};
+
+const Dots = ({ checkedIndex }:TDotIndex):Node => {
   return (
     <DotsContainer>
       <Dot index={0} checkedIndex={checkedIndex} />
