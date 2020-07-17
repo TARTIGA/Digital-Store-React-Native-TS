@@ -1,20 +1,28 @@
 /* @flow */
 import type { TDispatch } from '../types/core';
-import { GET_BASKET, START, SUCCESS, FAIL } from '../constants';
+import {SET_TO_BASKET,GET_BASKET,START,SUCCESS, FAIL  } from 'app/constants';
+//addHeaders import
 
-export const getBasket = () => (
+export const setToBasket = (item) => ({
+	type: SET_TO_BASKET,
+	payload: item,
+});
+
+export const getBasketItems = () => (
   dispatch: TDispatch,
   getState,
   { fetch }
 ): any => {
   dispatch({ type: GET_BASKET + START });
 
-  const { token: { token = '' } = {} } = getState();
+  const {
+    token: { token = '' } = {},
+  } = getState();
   const url = '/';
 
   fetch(url, {
     method: 'GET',
-    ...addJavaHeaders(token),
+    ...addHeader(token),
   })
     .then((data) => data.json())
     .then(({ result, data }) => {

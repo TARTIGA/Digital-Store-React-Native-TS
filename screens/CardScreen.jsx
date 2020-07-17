@@ -5,7 +5,7 @@ import styled from 'styled-components/native';
 import { Text, View } from 'react-native';
 import { Button, Slider } from 'app/components';
 import { AuthContext } from 'app/context';
-import { setToBasket } from '../actions/basket';
+import { setToBasket } from 'app/actions/basket';
 import theme from 'app/theme';
 
 const CardScreen = ({ navigation, route }) => {
@@ -14,7 +14,6 @@ const CardScreen = ({ navigation, route }) => {
   ////////////////////
   const [activeIdx, setActiveIdx] = useState(0);
   const dispatch = useDispatch();
-  const films = useSelector((state) => state.films);
   const basketItems = useSelector((state) => state.basket.items);
   const { item } = route.params;
   const { label, imgSrc } = route.params.item;
@@ -34,8 +33,11 @@ const CardScreen = ({ navigation, route }) => {
   useEffect(() => {
     console.log(['navigation', navigation]);
     console.log(['route', route]);
-    console.log('LOG: CardScreen -> films', films);
   }, []);
+
+  useEffect(() => {
+    console.log(['basketItems', basketItems]);
+  }, [basketItems]);
 
   const handlerSetToBasket = (item) => {
     dispatch(setToBasket(item));

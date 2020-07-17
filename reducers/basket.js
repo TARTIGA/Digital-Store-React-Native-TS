@@ -7,6 +7,7 @@ const INITIAL_STATE = {
 const basket = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case SET_TO_BASKET:
+    console.log(['SET_TO_BASKET',action.payload]);
       return { ...state, items: [...state.items, action.payload] };
     case `${GET_BASKET}${START}`:
       return { ...state, items: [] };
