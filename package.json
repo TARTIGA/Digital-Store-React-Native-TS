@@ -33,12 +33,16 @@
   "devDependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.10.5",
-    "@babel/preset-flow": "^7.10.4",
+    "@types/jest": "^26.0.7",
+    "@types/react": "^16.9.43",
+    "@types/react-native": "^0.63.2",
+    "@types/react-test-renderer": "^16.9.2",
     "babel-preset-expo": "~8.0.0",
     "react-native-image-slider-box": "^1.0.12",
     "react-native-picker-select": "^6.6.0",
     "react-native-svg-transformer": "^0.14.3",
-    "react-native-view-slider": "^1.1.1"
+    "react-native-view-slider": "^1.1.1",
+    "typescript": "^3.9.7"
   },
   "private": true
 }
