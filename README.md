@@ -16,13 +16,15 @@
     * Profile Screen
 * Modals
 
-![](/assets/screens/StartPage.png?raw=true 'StartPage')
-![](/assets/screens/SignIn.png?raw=true 'SignIn')
-![](/assets/screens/MainScreen.png?raw=true 'MainScreen')
-![](/assets/screens/Card.png?raw=true 'Card')
-![](/assets/screens/HomeScreen.png?raw=true 'HomeScreen')
-![](/assets/screens/Order.png?raw=true 'Order')
-![](/assets/screens/Search.png?raw=true 'Search)
-![](/assets/screens/UserProfile.png?raw=true 'UserProfile')
+#### Screens
+<img src="/assets/screens/StartPage.png" alt="StartPage" width="300" height="650">
+<img src="/assets/screens/SignIn.png" alt="SignIn" width="300" height="650">
+<img src="/assets/screens/MainScreen.png" alt="MainScreen" width="300" height="650">
+<img src="/assets/screens/Card.png" alt="Card" width="300" height="650">
+<img src="/assets/screens/HomeScreen.png" alt="HomeScreen" width="300" height="650">
+<img src="/assets/screens/Order.png" alt="Order" width="300" height="650">
+<img src="/assets/screens/Search.png" alt="Search" width="300" height="650">
+<img src="/assets/screens/UserProfile.png" alt="UserProfile" width="300" height="650">
 
-<img src="/assets/screens/UserProfile.png" alt="alt text" width="250" height="700">
+
+
