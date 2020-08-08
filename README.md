@@ -16,11 +16,11 @@
     * Profile Screen
 * Modals
 
-![](/assets/screens/StartPage.png?raw=true 'StartPage')
-![](/assets/screens/SignIn.png?raw=true 'SignIn')
-![](/assets/screens/MainScreen.png?raw=true 'MainScreen')
-![](/assets/screens/Card.png?raw=true 'Card')
-![](/assets/screens/HomeScreen.png?raw=true 'HomeScreen')
-![](/assets/screens/Order.png?raw=true 'Order')
-![](/assets/screens/Search.png?raw=true 'Search')
-![](/assets/screens/UserProfile.png?raw=true 'UserProfile')
+![](/assets/screens/StartPage.png?raw=true 'StartPage' =250x550)
+![](/assets/screens/SignIn.png?raw=true 'SignIn' =250x550)
+![](/assets/screens/MainScreen.png?raw=true 'MainScreen' =250x550)
+![](/assets/screens/Card.png?raw=true 'Card'=250x550)
+![](/assets/screens/HomeScreen.png?raw=true 'HomeScreen' =250x550)
+![](/assets/screens/Order.png?raw=true 'Order' =250x550)
+![](/assets/screens/Search.png?raw=true 'Search' =250x550)
+![](/assets/screens/UserProfile.png?raw=true 'UserProfile' =250x550)
