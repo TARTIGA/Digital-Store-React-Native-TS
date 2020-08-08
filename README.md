@@ -19,7 +19,6 @@
 #### Screens
 <img src="/assets/screens/StartPage.png" alt="StartPage" width="300" height="650">
 <img src="/assets/screens/SignIn.png" alt="SignIn" width="300" height="650">
-<img src="/assets/screens/MainScreen.png" alt="MainScreen" width="300" height="650">
 <img src="/assets/screens/Card.png" alt="Card" width="300" height="650">
 <img src="/assets/screens/HomeScreen.png" alt="HomeScreen" width="300" height="650">
 <img src="/assets/screens/Order.png" alt="Order" width="300" height="650">
